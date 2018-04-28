@@ -7095,4 +7095,14 @@ a {
     height:258px;
     width:391px;
   }
+  @mixin translateY($e) {
+    -webkit-transform: translateY($e);
+      -moz-transform: translateY($e);
+        transform: translateY($e);
+  }
+  @mixin transition($e) {
+    -webkit-transform: translateY($e);
+      -moz-transform: translateY($e);
+        transition: translateY($e);
+  }
 }
