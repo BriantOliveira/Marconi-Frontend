@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import '../../App.css'
+import Header from '../header-component/header.js'
+import Footer from '../footer-component/footer.js'
 
 
-class Home extends Component {
+export class Home extends Component {
   render() {
     return (
-      <div className="container-fluid">
-
-      Home page content goes here
-
+      <div>
+      <Header />
+      <Footer />
       </div>
     );
   }

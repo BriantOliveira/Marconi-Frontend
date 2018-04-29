@@ -1,35 +1,31 @@
-import React, { Component } from 'react';
-import '../../style.css';
+import React, { Component } from 'react'
+import Navbar from '../navagation/Navbar'
 
-class Header extends Component {
+export class Header extends Component {
   render() {
     return (
-      <header>
-
-      <nav id="navagation" className="navbar navbar-toggleable-md fixed-top bg-danger navbar-transparent" >
-          <div className="container nav">
-              <button className="navbar" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                  <span className="navbar-toggler-bar"></span>
-                  <span className="navbar-toggler-bar"></span>
-                  <span className="navbar-toggler-bar"></span>
-              </button>
-              <a className="navbar-brand" href="/">
-              <img src="../img/logo.png"/>
-              </a>
-              <div className="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul className="navbar-nav ml-auto">
-                  <a href="#" className="btn btn-link btn-neutral">Whitepaper</a>
-                  <a href="#" className="btn btn-link btn-neutral">Developers</a>
-                  <a href="#" className="btn btn-link btn-neutral">Core Tech</a>
-                  <a href="#" className="btn btn-link btn-neutral">Team</a>
-              </ul>
+      <div id="home" className="header-1">
+      <Navbar />
+        <div className="section text-center landing-section">
+          <div className="filter"></div>
+          <div className="content-center">
+            <div className="container">
+              <div className="row">
+                <div className="col-md-8 offset-md-2 text-center">
+                  <h1 className="title"> Your next great product made a reality</h1>
+                  <h5 className="description">Were Mission Consultants: a consortium of elite engineers and designers providing versatile professional solutions in full-stack web, iOS, and product/web design.</h5>
+                  <br/>
+                </div>
+                <div className="col-lg-10 offset-md-1">
+                  <a className="btn btn-magnify btn-lg btn-round btn-danger" href="#search" role="button"><i className="nc-icon nc-zoom-split"></i> Search Available Contractors</a>
+                </div>
               </div>
+            </div>
           </div>
-      </nav>
-
-      </header>
-    );
+        </div>
+      </div>
+    )
   }
 }
 
-export default Header;
+export default Header
