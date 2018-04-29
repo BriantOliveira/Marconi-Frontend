@@ -17,8 +17,11 @@ export class Header extends Component {
                   <h5 className="description"><span>A new blockchain protocol for jump starting secure networks using programmable packets</span></h5>
                   <br/>
                 </div>
+
                 <div className="col-lg-10 offset-md-1">
-                  <a className="btn btn-magnify btn-lg btn-round btn-danger" href="#search" role="button"><i className="nc-icon nc-zoom-split"></i> Search Available Contractors</a>
+                <h2 className="lp-element lp-pom-text nlh">Get early access to the SDK</h2>
+                  <a className="btn btn-magnify btn-lg btn-round btn-danger"  role="button"><img className="gitlogo" src="./img/git.svg"/> Request Git Access</a>
+                  <a className="btn btn-magnify btn-lg btn-round btn-danger"  role="button">View Sample Code</a>
                 </div>
               </div>
             </div>
