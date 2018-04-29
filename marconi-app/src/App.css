@@ -3541,6 +3541,7 @@ a {
   width:391px;
 }
 
+
 @media only screen and (max-width:600px) {
   #lp-pom-image-917-holder {
     background-image:url(//d9hhrg4mnvzow.cloudfront.net/www.marconi.org/0a00b612-asset-7_0dt0aq0dt0aq000000.png);
@@ -7105,4 +7106,11 @@ a {
       -moz-transform: translateY($e);
         transition: translateY($e);
   }
+}
+
+
+/* NAVBAR */
+#navagation {
+  color: #1a2323;
+  background-color: #1a2323;
 }

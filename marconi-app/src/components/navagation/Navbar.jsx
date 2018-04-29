@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import '../../style.css';
 
-class Header extends Component {
+export class Navbar extends Component {
   render() {
     return (
-      <header>
-
-      <nav id="navagation" className="navbar navbar-toggleable-md fixed-top bg-danger navbar-transparent" >
+      <nav className={(this.props.dark === true) ? `navbar navbar-toggleable-md navbar-default` : `navbar navbar-toggleable-md navbar-transparent navbar-absolute`}>
           <div className="container nav">
               <button className="navbar" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-bar"></span>
@@ -26,10 +24,8 @@ class Header extends Component {
               </div>
           </div>
       </nav>
-
-      </header>
     );
   }
 }
 
-export default Header;
+export default Navbar;
