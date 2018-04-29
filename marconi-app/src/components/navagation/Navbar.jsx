@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../../style.css';
+import { FromattedMessage } from 'react-intl'
 
 export class Navbar extends Component {
   render() {
@@ -20,7 +21,7 @@ export class Navbar extends Component {
                   <a href="#" className="btn btn-link btn-neutral">Core Tech</a>
                   <a href="#" className="btn btn-link btn-neutral">Team</a>
               </ul>
-            
+
           </div>
       </nav>
     );

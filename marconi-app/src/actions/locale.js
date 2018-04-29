@@ -1,8 +1,8 @@
 import { LOCALE_SET } from "../types";
-
+import zh from 'react-intl/locale-data/zh';
 export const localeSet = lang => ({
   type: LOCALE_SET,
-  lang
+  lang: zh,
 });
 
 export const setLocale = lang => dispatch => {
