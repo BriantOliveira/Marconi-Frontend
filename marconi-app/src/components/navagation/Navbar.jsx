@@ -12,16 +12,15 @@ export class Navbar extends Component {
                   <span className="navbar-toggler-bar"></span>
               </button>
               <a className="navbar-brand" href="/">
-              <img src="../img/logo.png"/>
+              <img className="logo" src="../img/logo.png"/>
               </a>
-              <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav ml-auto">
                   <a href="#" className="btn btn-link btn-neutral">Whitepaper</a>
                   <a href="#" className="btn btn-link btn-neutral">Developers</a>
                   <a href="#" className="btn btn-link btn-neutral">Core Tech</a>
                   <a href="#" className="btn btn-link btn-neutral">Team</a>
               </ul>
-              </div>
+            
           </div>
       </nav>
     );
