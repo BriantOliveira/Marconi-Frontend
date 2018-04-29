@@ -7,7 +7,6 @@ export class Header extends Component {
       <div id="home" className="header-1">
       <Navbar />
         <div className="section text-center landing-section">
-          <div className="filter"></div>
           <div className="content-center">
             <div className="container">
               <div className="row">
