@@ -32,3 +32,30 @@
 .navbar-nav.ml-auto {
   padding-left: 350px;
 }
+
+.img-1 {
+  height: 368px;
+  width: 500px;
+  float: left;
+}
+
+.title {
+  position: relative;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 48px;
+  float: right;
+  color: #fff;
+}
+
+.h5 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 49px;
+  float: right;
+  color: #fff;
+  position:relative;
+  margin-top: 100px;
+}

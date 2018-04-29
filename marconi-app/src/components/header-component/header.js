@@ -10,9 +10,11 @@ export class Header extends Component {
           <div className="content-center">
             <div className="container">
               <div className="row">
-                <div className="col-md-8 offset-md-2 text-center">
-                  <h1 className="title"> Your next great product made a reality</h1>
-                  <h5 className="description">Were Mission Consultants: a consortium of elite engineers and designers providing versatile professional solutions in full-stack web, iOS, and product/web design.</h5>
+              <img className="img-1" src="/img/computer.png" />
+                <div className="col-md-6 offset-md-3 text-center">
+                  <h1 className="title">Programmable Etherner</h1>
+                  <br></br>
+                  <h5 className="description"><span>A new blockchain protocol for jump starting secure networks using programmable packets</span></h5>
                   <br/>
                 </div>
                 <div className="col-lg-10 offset-md-1">
