@@ -5,16 +5,30 @@
   color: #1a2323;
 }
 
-.section.landing-section {
+.section {
   background-color: #1a2323;
 }
 
 .logo {
   width: 250px;
+  height: 41px;
 }
 
 @media (min-width: 768px)
 .navbar-nav {
     float: right;
     margin: 0;
+}
+
+.header-1 {
+  background-color: #1a2323;
+  padding-top: 0px;
+}
+
+.navbar.navbar-transparent {
+  padding-top: 1px;
+}
+
+.navbar-nav.ml-auto {
+  padding-left: 350px;
 }
