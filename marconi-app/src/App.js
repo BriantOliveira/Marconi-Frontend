@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import './style.css';
-import { IntlProvider } from 'react-intl';
+import {IntlProvider} from 'react-intl';
 
 //Components
 import Header from './components/header-component/header';
@@ -10,13 +10,15 @@ import Home from './components/pages/home';
 import Navbar from './components/navagation/Navbar'
 
 import { Router, Route, hashHistory } from 'react-router';
-import messages from "./messages";
+// import messages from "./messages";
 
 class App extends Component {
   render() {
     const {lang} = this.props;
     return (
-      <IntlProvider locale={lang} messages={messages[lang]}>
+      <IntlProvider locale='zh' messages={{
+        'h5.span': '使用可编程数据包跳转启动安全网络的新区块链协议'
+      }}>
       <div className="App">
       <Home />
       </div>
