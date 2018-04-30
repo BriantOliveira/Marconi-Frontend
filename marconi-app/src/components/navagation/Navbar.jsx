@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import '../../style.css';
-import { FromattedMessage } from 'react-intl'
+import { FromattedMessage } from 'react-intl';
+import { connect } from "react-redux";
+import {setLocale} from "../../actions/locale"
+import PropTypes from "prop-types";
 
 export class Navbar extends Component {
   render() {
@@ -16,17 +19,17 @@ export class Navbar extends Component {
               <img className="logo" src="../img/logo.png"/>
               </a>
               <ul className="navbar-nav ml-auto nav-item dropdown">
-                  <a href="#" className="btn btn-link btn-neutral">Whitepaper</a>
+                  <a href="https://docsend.com/view/5zragmb" className="btn btn-link btn-neutral">Whitepaper</a>
                   <a href="#" className="btn btn-link btn-neutral">Developers</a>
                   <a href="#" className="btn btn-link btn-neutral">Core Tech</a>
-                  <a href="#" className="btn btn-link btn-neutral">Team</a>
+                  <a href="https://www.marconi.org/team/" className="btn btn-link btn-neutral">Team</a>
                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       LANGUAGE
                     </a>
                   <div className="dropdown-menu dropdown-menu-right">
                       <div className="dropdown-header">Choose Language</div>
-                      <a className="dropdown-item" role="button"><img className="usa-flag" src="./img/usa.ico" /> EN |</a>
-                      <a className="dropdown-item" role="button"><img className="china-flag" src="./img/china.png" />  ZH</a>
+                      <a className="dropdown-item" role="button" onClick={() => this.props.setLocale("en")}><img className="usa-flag" src="./img/usa.ico" /> EN |</a>
+                      <a className="dropdown-item" role="button" onClick={() => this.props.setLocale("zh")}><img className="china-flag" src="./img/china.png" />  ZH</a>
                   </div>
 
               </ul>
@@ -37,4 +40,14 @@ export class Navbar extends Component {
   }
 }
 
-export default Navbar;
+Navbar.propTypes = {
+  setLocale: PropTypes.func.isRequired
+};
+
+function mapStateToProps(state) {
+  return {
+    lang: state.locale.lang
+  };
+}
+
+export default connect(mapStateToProps,{setLocale}, null, { pure: false})(Navbar);

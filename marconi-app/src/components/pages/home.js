@@ -11,7 +11,7 @@ export class Home extends Component {
       <IntlProvider locale="en">
       <div>
       <Header />
-      <Footer />
+      
       </div>
       </IntlProvider>
     );
