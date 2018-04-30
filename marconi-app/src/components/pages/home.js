@@ -3,6 +3,7 @@ import '../../App.css'
 import Header from '../header-component/header.js';
 import Footer from '../footer-component/footer.js';
 import Tech from '../Section/sec.js';
+// import Sample from '../Section/sample.js';
 import {IntlProvider} from 'react-intl';
 
 
@@ -12,7 +13,7 @@ export class Home extends Component {
       <IntlProvider locale="en">
       <div>
       <Header />
-      <Tech />
+      <Footer />
       </div>
       </IntlProvider>
     );

@@ -1,0 +1,60 @@
+/* Section 2 CSS */
+
+.sectionHeader {
+  line-height: 35px;
+}
+
+.w1 {
+  font-size: 24px;
+  font-family: 'Raleway';
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(0, 180, 204);
+}
+
+p {
+  line-height: 26px;
+}
+
+.w2 {
+  font-family: 'Open Sans';
+  font-weight: 300;
+  font-style: normal;
+  font-size: 16px;
+  color: rgb(52, 56, 56);
+}
+
+.sectionHeader {
+    line-height: 35px;
+}
+
+.s2 {
+  font-size: 24px;
+  font-family: 'Raleway';
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(0, 180, 204);
+}
+
+.w3 {
+  font-family: '&quot;Open Sans&quot';
+  font-weight: 300;
+  font-style: normal;
+  font-size: 16px;
+}
+
+.s3 {
+  color: rgb(52, 56, 56);
+}
+
+.hh {
+  text-align: center;
+  line-height: 45px;
+}
+
+.core {
+  font-family: Raleway;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 36px; color: rgb(0, 180, 204);
+}
