@@ -16,10 +16,11 @@ import Navbar from './components/navagation/Navbar'
 
 class App extends Component {
   render() {
-    const {lang} = this.props;
+    const {location, lang} = this.props;
     return (
       <IntlProvider locale={lang} messages={messages[lang]}>
       <div className="App">
+      <Route location={location} path="/" exact component={Home} />
       <Home />
       </div>
       </IntlProvider>
@@ -28,6 +29,9 @@ class App extends Component {
 }
 
 App.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired
+  }).isRequired,
   lang: PropTypes.string.isRequired
 };
 

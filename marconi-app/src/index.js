@@ -9,16 +9,41 @@ import en from 'react-intl/locale-data/en';
 import zh from 'react-intl/locale-data/zh';
 import { localeSet } from "./actions/locale";
 import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import createSagaMiddleware from "redux-saga";
+import { composeWithDevTools } from "redux-devtools-extension";
 import englishLocaleData from 'react-intl/locale-data/en';
+import history from "./history";
+import rootReducer from "./rootReducer";
 
 
 addLocaleData(en);
 addLocaleData(zh);
 
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(sagaMiddleware, thunk))
+);
+sagaMiddleware.run();
+
+if (localStorage.bookwormJWT) {
+  setAuthorizationHeader(localStorage.bookwormJWT);
+  store.dispatch(fetchCurrentUserRequest());
+} else {
+  store.dispatch(fetchCurrentUserSuccess({}));
+}
+
+if (localStorage.alhubLang) {
+  store.dispatch(localeSet(localStorage.alhubLang));
+}
+
 
 ReactDOM.render(
-  <Router>
-  <App />
-  <Provider/>
+  <Router history={history}>
+    <Provider store={store}>
+      <Route component={App} />
+    </Provider>
   </Router>, document.getElementById('root'));
 registerServiceWorker();
