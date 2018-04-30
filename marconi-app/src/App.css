@@ -3528,7 +3528,7 @@ a {
   position:absolute;
   background:rgba(255,255,255,0);
   -pie-background:rgba(255,255,255,0);
-  behavior:url(//d9hhrg4mnvzow.cloudfront.net/PIE.htc);
+  behavior:url('/img/browser');
   height:129px;
   width:459px;
 }
