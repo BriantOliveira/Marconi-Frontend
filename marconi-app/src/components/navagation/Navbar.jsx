@@ -24,14 +24,9 @@ export class Navbar extends Component {
                       LANGUAGE
                     </a>
                   <div className="dropdown-menu dropdown-menu-right">
-                      <div className="dropdown-header">Dropdown header</div>
-                      <a className="dropdown-item" href="#paper-kit">Action</a>
-                      <a className="dropdown-item" href="#paper-kit">Another action</a>
-                      <a className="dropdown-item" href="#paper-kit">Something else here</a>
-                      <div className="dropdown-divider"></div>
-                      <a className="dropdown-item" href="#paper-kit">Separated link</a>
-                      <div className="dropdown-divider"></div>
-                      <a className="dropdown-item" href="#paper-kit">Another separated link</a>
+                      <div className="dropdown-header">Choose Language</div>
+                      <a className="dropdown-item" role="button"><img className="usa-flag" src="./img/usa.ico" /> EN |</a>
+                      <a className="dropdown-item" role="button"><img className="china-flag" src="./img/china.png" />  ZH</a>
                   </div>
 
               </ul>
