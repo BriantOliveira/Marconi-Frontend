@@ -97,3 +97,12 @@ a.btn.btn-magnify.btn-lg.btn-round.btn-danger {
   margin-left: 20px;
   color: #fff;
 }
+
+#navbarDropdownMenuLink {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding-top: 4px;
+  padding-left: 4px;
+
+}
