@@ -5,7 +5,7 @@ import { FormattedMessage } from 'react-intl'
 export class Header extends Component {
   render() {
     return (
-      <div id="home" className="header-1">
+      <div id="section" className="header-1">
       <Navbar />
         <div className="section text-center landing-section">
           <div className="content-center">
@@ -34,4 +34,4 @@ export class Header extends Component {
   }
 }
 
-export default Header
+export default Header;

@@ -125,3 +125,11 @@ a.btn.btn-magnify.btn-lg.btn-round.btn-danger {
 #navbarDropdownMenuLink {
   padding-left: 20px;
 }
+
+.wrapper {
+  position: absolute;
+  background: none;
+  height: 1323px;
+  width: 100%;
+  text-align: center;
+}
