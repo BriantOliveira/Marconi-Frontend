@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import './style.css';
 import {IntlProvider} from 'react-intl';
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { Router, Route, hashHistory } from 'react-router';
+import messages from "./messages";
 
 //Components
 import Header from './components/header-component/header';
@@ -9,16 +13,12 @@ import Footer from './components/footer-component/footer';
 import Home from './components/pages/home';
 import Navbar from './components/navagation/Navbar'
 
-import { Router, Route, hashHistory } from 'react-router';
-// import messages from "./messages";
 
 class App extends Component {
   render() {
     const {lang} = this.props;
     return (
-      <IntlProvider locale='zh' messages={{
-        'h5.span': '使用可编程数据包跳转启动安全网络的新区块链协议'
-      }}>
+      <IntlProvider locale={lang} messages={messages[lang]}>
       <div className="App">
       <Home />
       </div>
@@ -27,6 +27,14 @@ class App extends Component {
   }
 }
 
+App.propTypes = {
+  lang: PropTypes.string.isRequired
+};
 
+function mapStateToProps(state) {
+  return {
+    lang: state.locale.lang
+  };
+}
 
-export default App;
+export default connect(mapStateToProps)(App);
