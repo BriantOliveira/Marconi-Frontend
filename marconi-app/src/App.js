@@ -21,7 +21,7 @@ class App extends Component {
       <IntlProvider locale={lang} messages={messages[lang]}>
       <div className="App">
       <Route location={location} path="/" exact component={Home} />
-      <Home />
+      
       </div>
       </IntlProvider>
     );

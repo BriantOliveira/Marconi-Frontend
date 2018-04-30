@@ -16,6 +16,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import englishLocaleData from 'react-intl/locale-data/en';
 import history from "./history";
 import rootReducer from "./rootReducer";
+import setAuthorizationHeader from "./utils/setAuthorizationHeader";
 
 
 addLocaleData(en);
@@ -24,16 +25,14 @@ addLocaleData(zh);
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
   rootReducer,
-  composeWithDevTools(applyMiddleware(sagaMiddleware, thunk))
+  composeWithDevTools(applyMiddleware(thunk))
 );
-sagaMiddleware.run();
+
 
 if (localStorage.bookwormJWT) {
   setAuthorizationHeader(localStorage.bookwormJWT);
-  store.dispatch(fetchCurrentUserRequest());
-} else {
-  store.dispatch(fetchCurrentUserSuccess({}));
-}
+  // store.dispatch();
+} 
 
 if (localStorage.alhubLang) {
   store.dispatch(localeSet(localStorage.alhubLang));
