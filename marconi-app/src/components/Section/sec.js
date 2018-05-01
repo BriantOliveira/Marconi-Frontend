@@ -17,59 +17,64 @@ class Tech extends Component {
                     </div>
                 </div>
             </div>
-            <div class="card card-plain card-blog">
-              <div class="row">
-                <div class="col-md-7">
-                    <div class="card-block">
-                      <h3 class="card-title">Ethernet-Level Encryption</h3>
-                      <div className="quotes">
-                        <p className="p1">Secure communication pipes established at Layer 2 of</p>
-                        <p className="p1">the OSI model provide packet-level encryption and custom</p>
-                        <p className="p1">packet routing and processing</p>
-                      </div>
-                   </div>
-                </div>
-                <div class="col-md-5">
-                  <div class="card-image">
-                    <img class="security" src="./img/lock.png" />
+            <div className="card-1">
+              <div class="card card-plain card-blog">
+                <div class="row">
+                  <div class="col-md-7">
+                      <div class="card-block">
+                        <h3 class="card-title">Ethernet-Level Encryption</h3>
+                        <div className="quotes">
+                          <p className="p1">Secure communication pipes established at Layer 2 of</p>
+                          <p className="p1">the OSI model provide packet-level encryption and custom</p>
+                          <p className="p1">packet routing and processing</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-5">
+                    <div class="card-image">
+                      <img class="security" src="./img/lock.png" />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-
-        <div className="card card-plain card-blog">
-          <div className="row">
-            <div className="col-md-5">
-              <div className="card-image">
-                <img className="browser" src="./img/browser.png" />
+        <div className="card-2">
+          <div className="card card-plain card-blog">
+            <div className="row">
+              <div className="col-md-5">
+                <div className="card-image">
+                  <img className="browser" src="./img/browser.png" />
+                </div>
               </div>
-            </div>
-            <div className="col-md-7">
-              <div class="card-block">
-                  <h3 className="card-title">Programmable Packets</h3>
-                  <div className="quotes">
-                    <p className="p1">Smart contracts for network packets allow the creation</p>
-                    <p className="p1"> of packet level decentralized applications for improved </p>
-                    <p className="p1">network security and operation</p>
-                  </div>
+              <div className="col-md-7">
+                <div class="card-block">
+                    <h3 className="card-title">Programmable Packets</h3>
+                    <div className="quotes">
+                      <p className="p1">Smart contracts for network packets allow the creation</p>
+                      <p className="p1"> of packet level decentralized applications for improved </p>
+                      <p className="p1">network security and operation</p>
+                    </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="card card-plain card-blog">
-          <div class="row">
-            <div class="col-md-7">
-                <div class="card-block">
-                  <h3 class="card-title">Branch Chains</h3>
-                  <div className="quotes">
-                    <p className="p1">Branchable blockchains enable the programmatic </p>
-                    <p className="p1">creation and jump starting of new secure networks</p>
-                  </div>
-               </div>
-            </div>
-            <div class="col-md-5">
-              <div class="card-image">
-                <img class="security" src="./img/crypt.png" />
+          <div className="card-3">
+          <div class="card card-plain card-blog">
+            <div class="row">
+              <div class="col-md-7">
+                  <div class="card-block">
+                    <h3 class="card-title">Branch Chains</h3>
+                    <div className="quotes">
+                      <p className="p1">Branchable blockchains enable the programmatic </p>
+                      <p className="p1">creation and jump starting of new secure networks</p>
+                    </div>
+                 </div>
+              </div>
+              <div class="col-md-5">
+                <div class="card-image">
+                  <img class="security" src="./img/crypt.png" />
+                </div>
               </div>
             </div>
           </div>
