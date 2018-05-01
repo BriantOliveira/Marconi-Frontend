@@ -135,7 +135,7 @@ a.btn.btn-magnify.btn-lg.btn-round.btn-danger {
 }
 
 .core1 {
-  font-family: Raleway;
+  font-family: 'Raleway', sans-serif;
   font-weight: 600;
   font-style: normal;
   font-size: 48px;
@@ -162,15 +162,23 @@ a.btn.btn-magnify.btn-lg.btn-round.btn-danger {
 .card-title {
   color: rgb(0, 180, 204);
   font-size: 28px;
-  font-family: Raleway;
+  font-family: R'Raleway', sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
 .p1 {
-  font-family:Open Sans;
+  font-family: 'Open Sans', sans-serif;;
   font-weight: 300;
   font-style: normal;
   font-size: 18px;
   color: rgb(52, 56, 56);
+}
+
+.wrapper.Section2 {
+  background-color: #f0f0f0;
+}
+
+.Section2 {
+  background-color: #f0f0f0;
 }

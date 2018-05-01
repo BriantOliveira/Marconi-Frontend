@@ -4,6 +4,7 @@ import './section.css'
 class Tech extends Component {
   render() {
     return (
+      <div className="Section2">
         <div classNameName="wrapper">
             <div className="text-center landing-section">
                 <div className="container">
@@ -55,7 +56,26 @@ class Tech extends Component {
             </div>
           </div>
         </div>
+        <div class="card card-plain card-blog">
+          <div class="row">
+            <div class="col-md-7">
+                <div class="card-block">
+                  <h3 class="card-title">Branch Chains</h3>
+                  <div className="quotes">
+                    <p className="p1">Branchable blockchains enable the programmatic </p>
+                    <p className="p1">creation and jump starting of new secure networks</p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-5">
+              <div class="card-image">
+                <img class="security" src="./img/crypt.png" />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
     );
   }
 }
