@@ -162,7 +162,7 @@ a.btn.btn-magnify.btn-lg.btn-round.btn-danger {
 .card-title {
   color: rgb(0, 180, 204);
   font-size: 28px;
-  font-family: R'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -175,10 +175,37 @@ a.btn.btn-magnify.btn-lg.btn-round.btn-danger {
   color: rgb(52, 56, 56);
 }
 
-.wrapper.Section2 {
+.wrapper {
   background-color: #f0f0f0;
 }
 
 .Section2 {
   background-color: #f0f0f0;
+}
+
+#bt {
+  background: #303535;
+}
+
+#bt:hover {
+  background: #ef6737;
+}
+
+.btn-danger {
+  background: #ef6737;
+}
+
+.btn-danger:hover {
+  background: #ef6737;
+}
+
+.lp-pom-text  {
+  text-align: center;
+  padding-right: 201px;
+  padding-bottom: 6px;
+}
+
+.mini-section{
+  margin-left: 57px;
+  margin-top: 75px;
 }

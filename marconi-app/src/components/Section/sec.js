@@ -76,6 +76,10 @@ class Tech extends Component {
                   <img class="security" src="./img/crypt.png" />
                 </div>
               </div>
+              <div className="mini-section">
+                <h2 className="element">Learn more about the Marconi Platform</h2>
+                <a id="bn" className="btn btn-magnify btn-lg btn-round"  role="button">Read Whitepaper</a>
+              </div>
             </div>
           </div>
         </div>
