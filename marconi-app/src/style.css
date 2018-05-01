@@ -133,3 +133,21 @@ a.btn.btn-magnify.btn-lg.btn-round.btn-danger {
   width: 100%;
   text-align: center;
 }
+
+.core1 {
+  font-family: Raleway;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 48px;
+  color: rgb(0, 180, 204);
+}
+
+.browser {
+  width: 459px;
+  height: 129px;
+  margin-left: 120px;
+}
+
+.card-description {
+  text-align: center;
+}
