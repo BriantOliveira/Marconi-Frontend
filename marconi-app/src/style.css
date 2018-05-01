@@ -151,3 +151,26 @@ a.btn.btn-magnify.btn-lg.btn-round.btn-danger {
 .card-description {
   text-align: center;
 }
+
+.security {
+  width: 391px;
+  height: 258px;
+  margin-right: 220px;
+  margin-bottom: 27px;
+}
+
+.card-title {
+  color: rgb(0, 180, 204);
+  font-size: 28px;
+  font-family: Raleway;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.p1 {
+  font-family:Open Sans;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 18px;
+  color: rgb(52, 56, 56);
+}

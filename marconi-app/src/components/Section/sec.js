@@ -16,6 +16,25 @@ class Tech extends Component {
                     </div>
                 </div>
             </div>
+            <div class="card card-plain card-blog">
+              <div class="row">
+                <div class="col-md-7">
+                    <div class="card-block">
+                      <h3 class="card-title">Ethernet-Level Encryption</h3>
+                      <div className="quotes">
+                        <p className="p1">Secure communication pipes established at Layer 2 of</p>
+                        <p className="p1">the OSI model provide packet-level encryption and custom</p>
+                        <p className="p1">packet routing and processing</p>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-md-5">
+                  <div class="card-image">
+                    <img class="security" src="./img/lock.png" />
+                  </div>
+                </div>
+              </div>
+            </div>
 
         <div className="card card-plain card-blog">
           <div className="row">
@@ -26,12 +45,12 @@ class Tech extends Component {
             </div>
             <div className="col-md-7">
               <div class="card-block">
-                  <h3 className="card-title">
-                    <a href="">Programmable Packets</a>
-                  </h3>
-                  <p>Smart contracts for network packets allow the creation</p>
-                  <p> of packet level decentralized applications for improved </p>
-                  <p>network security and operation</p>
+                  <h3 className="card-title">Programmable Packets</h3>
+                  <div className="quotes">
+                    <p className="p1">Smart contracts for network packets allow the creation</p>
+                    <p className="p1"> of packet level decentralized applications for improved </p>
+                    <p className="p1">network security and operation</p>
+                  </div>
               </div>
             </div>
           </div>
