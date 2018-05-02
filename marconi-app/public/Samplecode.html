@@ -1,0 +1,1297 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="lp-version" content="v6.7.163">
+      <!--96648373-f42e-4885-9032-9f7e1c0d4056 h-->
+<title>Marconi - Programmable Ethernet</title>
+<meta name="keywords" content="">
+<meta name="description" content="The Marconi protocol is designed down to the ethernet level and powers a decentralized networking stack that provides privacy, security, net neutrality and upgradability">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+<link rel="apple-touch-icon" sizes="57x57" href="https://s3.us-east-2.amazonaws.com/marconi-files/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://s3.us-east-2.amazonaws.com/marconi-files/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://s3.us-east-2.amazonaws.com/marconi-files/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://s3.us-east-2.amazonaws.com/marconi-files/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://s3.us-east-2.amazonaws.com/marconi-files/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://s3.us-east-2.amazonaws.com/marconi-files/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://s3.us-east-2.amazonaws.com/marconi-files/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://s3.us-east-2.amazonaws.com/marconi-files/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://s3.us-east-2.amazonaws.com/marconi-files/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="https://s3.us-east-2.amazonaws.com/marconi-files/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://s3.us-east-2.amazonaws.com/marconi-files/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://s3.us-east-2.amazonaws.com/marconi-files/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://s3.us-east-2.amazonaws.com/marconi-files/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://s3.us-east-2.amazonaws.com/marconi-files/favicons/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="https://s3.us-east-2.amazonaws.com/marconi-files/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<script>
+
+if (location.protocol != 'https:')
+{
+ location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+}
+
+</script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous" type="text/css">
+<script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+<script>
+lp = lp || {};
+lp.webFontLoad = {
+  google: {
+    families: ['Open Sans:700,regular,300','Raleway:regular,600,300,500','Ubuntu Mono:regular']
+  },
+  active: function() {
+   if(lp && lp.text && typeof lp.text.fixTextHeights === "function")  {
+     lp.text.runTextFixes(true)
+   }
+  }
+};
+window.WebFont.load(lp.webFontLoad);
+</script>
+<script type="text/javascript">
+lp.jQuery(function(){
+  // Remove convertable closedAt=0 URL param
+  var query = '?' + window.location.search
+    .replace('?', '')
+    .split('&')
+    .filter(function(param){
+       return param.indexOf('closedAt=0') < 0
+     })
+    .join('&');
+  if ( ! query) { return; }
+  lp.jQuery(["#lp-pom-button-201","#lp-pom-button-628","#lp-pom-button-899"]).each(function(i, id) {
+    var $element = lp.jQuery(id);
+    $element.each(function(i, elem){
+      var parser = document.createElement('a');
+      parser.href = lp.jQuery(elem).attr('href');
+      var search = parser.search.replace('?', '');
+      if (search === '') {
+        parser.search = query
+      } else {
+        var currentSearchArray = query.replace('?', '').split('&');
+        parser.search = search.split('&').concat(currentSearchArray)
+          .filter(function(item,index,self){return index == self.indexOf(item)})
+          .join('&');
+      }
+      lp.jQuery(elem).attr('href', parser.href);
+    });
+  });
+});
+</script>
+<!--[if IE 7]>
+<script>
+(function() {
+  var sheet = document.styleSheets[1];
+  var rules = sheet.rules;
+  var rule;
+  var index = -1;
+  for (var i=0, l=rules.length; i<l; i++){
+    rule = rules[i];
+    if (rule.selectorText.toLowerCase() == 'div.lp-pom-root .lp-pom-text span') {
+      index = i;
+      break;
+    }
+  }
+  if (index > -1) {
+    sheet.removeRule(index);
+    sheet.addRule('div.lp-pom-root .lp-pom-text span', 'line-height:inherit');
+  }
+})();
+</script>
+<![endif]-->
+
+<script src="//builder-assets.unbounce.com/published/ub-browser-879f873.z.js" type="text/javascript"></script>
+
+<!-- lp:insertions end head -->
+<script type='text/javascript'>
+/* globals lp, ga, $ */
+
+(function() {
+  var EventTracker, lpScriptVersion;
+
+  lpScriptVersion = '1.4.1';
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');;
+
+  ga('create', 'UA-115759699-1', 'auto', {
+    'siteSpeedSampleRate': 100
+  });
+
+  if ((window.ub.page.variantId != null) && window.ub.page.usedAs === "main") {
+    ga('send', 'pageview', document.location.pathname + window.ub.page.variantId + window.location.search);
+  } else {
+    ga('send', 'pageview');
+  }
+
+  EventTracker = (function() {
+    function EventTracker() {
+      lp.jQuery(document).ready((function(_this) {
+        return function() {
+          return _this._addHandlers();
+        };
+      })(this));
+    }
+
+    EventTracker.prototype._addHandlers = function() {
+      lp.jQuery('.lp-pom-form .lp-pom-button').unbind('click tap touchstart').bind('click tap touchstart', (function(_this) {
+        return function(e) {
+          return _this._formHandler(e);
+        };
+      })(this));
+      lp.jQuery('.lp-pom-form form').unbind('keypress').keypress((function(_this) {
+        return function(e) {
+          if (e.which === 13 && e.target.nodeName.toLowerCase() !== 'textarea') {
+            return _this._formHandler(e);
+          }
+        };
+      })(this));
+      lp.jQuery('.lp-pom-button').not('.lp-pom-form .lp-pom-button').click((function(_this) {
+        return function(e) {
+          var $parentElm;
+          $parentElm = lp.jQuery(e.currentTarget);
+          return _this._linkHandler(e, $parentElm);
+        };
+      })(this));
+      lp.jQuery('.lp-pom-image a').click((function(_this) {
+        return function(e) {
+          var $parentElm;
+          $parentElm = lp.jQuery(e.currentTarget).closest('.lp-pom-image');
+          return _this._linkHandler(e, $parentElm);
+        };
+      })(this));
+      return lp.jQuery('.lp-pom-text a').click((function(_this) {
+        return function(e) {
+          var $parentElm;
+          $parentElm = lp.jQuery(e.currentTarget).closest('.lp-pom-text');
+          return _this._linkHandler(e, $parentElm);
+        };
+      })(this));
+    };
+
+    EventTracker.prototype._isGaLoaded = function() {
+      return !!window.ga && !!ga.create;
+    };
+
+    EventTracker.prototype._formHandler = function(event) {
+      var $form, $formContainer, params;
+      event.preventDefault();
+      event.stopPropagation();
+      $formContainer = lp.jQuery(event.currentTarget).closest('.lp-pom-form');
+      $form = $formContainer.children('form');
+      if ($form.valid()) {
+        if (!this._isGaLoaded()) {
+          return $form.submit();
+        }
+        params = lp.jQuery.extend({
+          category: 'Form',
+          action: 'Submit',
+          label: "#" + ($formContainer.attr('id'))
+        }, $formContainer.data('ubGAParams'));
+        this._logEvent(params);
+        return ga('send', 'event', params.category, params.action, params.label, {
+          hitCallback: function() {
+            return $form.submit();
+          }
+        });
+      }
+    };
+
+    EventTracker.prototype._linkHandler = function(event, $parentElm) {
+      var $element, browser, hasHandler, id, params, parentId, preventingDefault, target, uri;
+      if (!this._isGaLoaded()) {
+        return;
+      }
+      $element = lp.jQuery(event.currentTarget);
+      uri = $element.attr('href');
+      id = $element.attr('id');
+      target = $element.attr('target');
+      browser = lp.jQuery.browser;
+      parentId = $parentElm.attr('id');
+      hasHandler = this._hasHandler(id || parentId);
+      preventingDefault = !hasHandler && target !== '_blank';
+      if (browser.msie === true && browser.version <= 8.0) {
+        preventingDefault = false;
+      }
+      if (preventingDefault) {
+        event.preventDefault();
+      }
+      params = lp.jQuery.extend({}, this._getEventParams(uri, parentId), $parentElm.data('ubGAParams'));
+      this._logEvent(params);
+      return ga('send', 'event', params.category, params.action, params.label, {
+        hitCallback: function() {
+          var _ref;
+          if (preventingDefault) {
+            if (uri.indexOf('#') === 0) {
+              return lp.jQuery('html, body').scrollTop((_ref = lp.jQuery(uri).offset()) != null ? _ref.top : void 0);
+            } else {
+              switch (target) {
+                case '_top':
+                  return window.top.location.href = uri;
+                case '_parent':
+                  return window.parent.location.href = uri;
+                default:
+                  return window.location.href = uri;
+              }
+            }
+          }
+        }
+      });
+    };
+
+    EventTracker.prototype._hasHandler = function(id) {
+      var clickHandlers, handler, _i, _len, _ref, _ref1, _ref2, _ref3, _ref4;
+      clickHandlers = [].concat(typeof $ === "function" ? (_ref = $('#' + id).data('events')) != null ? _ref.click : void 0 : void 0, typeof $ === "function" ? (_ref1 = $('#' + id + ' a').data('events')) != null ? _ref1.click : void 0 : void 0, (_ref2 = lp.jQuery('#' + id).data('events')) != null ? _ref2.click : void 0, (_ref3 = lp.jQuery('#' + id + ' a').data('events')) != null ? _ref3.click : void 0);
+      for (_i = 0, _len = clickHandlers.length; _i < _len; _i++) {
+        handler = clickHandlers[_i];
+        if ((_ref4 = handler != null ? handler.namespace : void 0) === 'fb' || _ref4 === 'smoothScroll') {
+          return true;
+        }
+      }
+      return false;
+    };
+
+    EventTracker.prototype._getEventParams = function(uri, id) {
+      var host, _ref;
+      host = ((_ref = uri.split('/')) != null ? _ref[2] : void 0) || '';
+      id = "#" + id;
+      if (uri.indexOf('#') === 0) {
+        return {
+          category: 'In-Page',
+          action: uri,
+          label: id
+        };
+      } else if (host.indexOf('facebook') > -1) {
+        return {
+          category: 'Social',
+          action: 'Facebook',
+          label: id
+        };
+      } else if (host.indexOf('twitter') > -1) {
+        return {
+          category: 'Social',
+          action: 'Twitter',
+          label: id
+        };
+      } else if (host.indexOf('linkedin') > -1) {
+        return {
+          category: 'Social',
+          action: 'Linkedin',
+          label: id
+        };
+      } else if (host.indexOf('plus.google.com') > -1) {
+        return {
+          category: 'Social',
+          action: 'Google+',
+          label: id
+        };
+      } else if (uri.indexOf('mailto:') > -1) {
+        return {
+          category: 'Email',
+          action: uri.replace('mailto:', ''),
+          label: id
+        };
+      } else if (uri.indexOf('/tel/') > -1) {
+        return {
+          category: 'Phone',
+          action: uri.split('/tel/')[1],
+          label: id
+        };
+      } else if (uri.indexOf('/rel/') > -1) {
+        return {
+          category: 'Lightbox',
+          action: 'Lightbox',
+          label: id
+        };
+      } else if (/\.(pdf|doc|docx|csv)/.test(uri)) {
+        return {
+          category: 'Download',
+          action: this._cleanUri(uri),
+          label: id
+        };
+      } else {
+        return {
+          category: 'Outbound',
+          action: this._cleanUri(uri),
+          label: id
+        };
+      }
+    };
+
+    EventTracker.prototype._cleanUri = function(uri) {
+      return uri.replace(/clk[n,g]\//, '').replace('/', '://');
+    };
+
+    EventTracker.prototype._logEvent = function(params) {
+      return typeof console !== "undefined" && console !== null ? typeof console.log === "function" ? console.log("Sending event:\n Category: " + params.category + "\n Action: " + params.action + "\n Label: " + params.label) : void 0 : void 0;
+    };
+
+    EventTracker.prototype.trackAll = function() {
+      return void 0;
+    };
+
+
+    /*
+     * Public API
+     * trackOne: allows the user to override Google Analytics event params
+     *   (category, action, label) for a given element (using the given selector)
+     */
+
+    EventTracker.prototype.trackOne = function(selector, category, action, label) {
+      return lp.jQuery(selector).data('ubGAParams', {
+        category: category,
+        action: action,
+        label: label
+      });
+    };
+
+    return EventTracker;
+
+  })();
+
+  window.eventTracker = new EventTracker();
+
+}).call(this);
+</script>
+</head>
+<body class="lp-pom-body ">
+<!-- lp:insertions start body:before -->
+<!-- lp:insertions end body:before -->
+
+<div class="lp-element lp-pom-root" id="lp-pom-root">
+<div id="lp-pom-root-color-overlay"></div>
+<div class="lp-positioned-content">
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-93">
+<p class="sectionHeader" style="line-height: 31px;">
+<span style="font-size: 20px; font-family: Raleway; font-weight: 400; font-style: normal; color: rgb(0, 180, 204);">Network Admin Apps</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-94">
+<p style="line-height: 26px;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal; font-size: 16px; color: rgb(255, 255, 255);">Create decentralized security apps like Anti-Phishing, Anti-Malware, Intrusion Prevention Systems and dVPNs</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-141">
+<p style="line-height: 42px;">
+<span style="color: rgb(52, 56, 56); font-size: 28px; font-family: Raleway; font-weight: 400; font-style: normal;">The Marconi protocol is designed down to the ethernet level and powers a decentralized networking stack that provides privacy, security, net neutrality and upgradability</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-142">
+<div style="text-align: center;">
+<br>
+</div>
+<h2 style="text-align: center;">
+<span style="font-family: Raleway; font-weight: 600; font-style: normal; font-size: 48px; color: rgb(0, 180, 204);">Core Technology</span>
+</h2>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-157">
+<div>
+<br>
+</div>
+<h2 style="text-align: center;">
+<span style="font-family: Raleway; font-weight: 600; font-style: normal; font-size: 48px; color: rgb(0, 180, 204);">Use Cases</span>
+</h2>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-166">
+<p class="sectionHeader" style="line-height: 31px;">
+<span style="font-size: 20px; font-family: Raleway; font-weight: 400; font-style: normal; color: rgb(0, 180, 204);">Security Apps</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-167">
+<p style="line-height: 26px;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal; font-size: 16px; color: rgb(255, 255, 255);">Create administrative applications for network load balancing, changing network topology and IOT device management.</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-171">
+<p class="sectionHeader" style="line-height: 31px;">
+<span style="font-size: 20px; font-family: Raleway; font-weight: 400; font-style: normal; color: rgb(0, 180, 204);">Secure Field Networks</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-172">
+<p style="line-height: 26px;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal; font-size: 16px; color: rgb(255, 255, 255);">Rapidly deploy secure networks in battlefields and disaster recovery areas. Record network activity on a ledger for after action reviews.</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-174">
+<p class="sectionHeader" style="line-height: 31px;">
+<span style="font-size: 20px; font-family: Raleway; font-weight: 400; font-style: normal; color: rgb(0, 180, 204);">Token to Chain Migration</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-175">
+<p style="line-height: 26px;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal; font-size: 16px; color: rgb(255, 255, 255);">Migrate token projects (e.g. ERC20) to a blockchain where the tokens now provide utility by powering the blockchain</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-177">
+<p class="sectionHeader" style="line-height: 31px;">
+<span style="font-size: 24px; font-family: Raleway; font-weight: 400; font-style: normal; color: rgb(0, 180, 204);">Virtualized Blockchain</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-178">
+<p style="line-height: 26px;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal; font-size: 16px; color: rgb(255, 255, 255);">Jump start new blockchains that leverage the Marconi Network for secure block creation and persistence.</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-188">
+<h2 style="text-align: center;">
+<span style="color: rgb(52, 56, 56); font-size: 20px; font-family: Raleway; font-weight: 600; font-style: normal;">Get early access to the SDK</span>
+</h2>
+</div>
+<a class="lp-element lp-pom-button" id="lp-pom-button-201" href="clkn/rel/h-2-lightbox.html"><span class="label">JOIN BETA PROGRAM</span></a>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-205">
+<p style="line-height: 18px;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal; font-size: 12px; color: rgb(0, 180, 204);"><span style="font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal; color: rgb(0, 180, 204);">&copy; 2018 Marconi Foundation</span></span><span style="font-size: 12px;"><br></span><span style="font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal; font-size: 12px; color: rgb(0, 180, 204);"><br></span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-211">
+<p>
+<span style="color: rgb(0, 180, 204);"><a data-action="url" data-params="false" href="clkn/https/docsend.com/view/5zragmb" style="text-decoration:none !important;" target="_self"><span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal; font-size: 16px;">Whitepaper</span></a><span style="font-size: 16px; font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal;">&nbsp;</span></span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-212">
+<p>
+<span style="color: rgb(0, 180, 204);"><a data-action="url" data-params="false" href="#lp-pom-text-142" style="text-decoration:none !important;" target="_self"><span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal; font-size: 16px;">Core Tech</span></a><span style="font-size: 12px;"><a href="#lp-pom-text-142" data-action="url" data-params="false" target="_self"></a></span></span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-219">
+<p>
+<a data-action="url" data-params="false" href="#lp-pom-text-810" target="_self"><span style="color: rgb(0, 180, 204); font-size: 16px;"><span style="text-decoration: none; font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal;">Developers</span><span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal;">&nbsp;</span></span></a>
+</p>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-232">
+<div id="lp-pom-box-232-color-overlay"></div>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-240">
+<div id="lp-pom-box-240-color-overlay"></div>
+<a class="lp-element lp-pom-button" id="lp-pom-button-241" href="#lp-pom-box-245" target="_self"><span class="label">Network Creation</span></a><a class="lp-element lp-pom-button" id="lp-pom-button-242" href="#lp-pom-box-247" target="_self"><span class="label">Network Admin</span></a><a class="lp-element lp-pom-button" id="lp-pom-button-243" href="#lp-pom-box-257" target="_self"><span class="label">Anti-Phishing</span></a>
+<div class="lp-element lp-pom-box" id="lp-pom-box-589">
+<div id="lp-pom-box-589-color-overlay"></div>
+</div>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-244">
+<div id="lp-pom-box-244-color-overlay"></div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-245">
+<div id="lp-pom-box-245-color-overlay"></div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-281">
+<div id="lp-pom-box-281-color-overlay"></div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-291">
+<p>
+<code class="c"><span style="color: rgb(171, 178, 191); font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; font-size: 16px;">$ marconi branch foo<br></span><span style="font-size: 16px;"><span style="color: rgb(152, 195, 121); font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal;">&gt;&gt;&gt; Success. Created branch foo.</span><span style="color: rgb(171, 178, 191); font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal;">
+<br>
+<br>$ marconi status --branch_name=foo<br>
+</span><span style="color: rgb(152, 195, 121); font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal;">&gt;&gt;&gt; Branch foo: uninitialized</span><span style="color: rgb(171, 178, 191); font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal;">
+<br>
+<br>$ marconi init --config=/tmp/config.txt --branch_name=foo<br>
+</span><span style="color: rgb(152, 195, 121); font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal;">&gt;&gt;&gt; Success. Configured branch foo.</span><span style="color: rgb(171, 178, 191); font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal;">
+<br>
+<br>$ marconi run --branch_name=foo<br>
+</span><span style="color: rgb(152, 195, 121); font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal;">&gt;&gt;&gt; Success. Running branch foo.</span></span><span style="font-style: normal;"><span style="font-weight: 400;"><span style="font-family: Ubuntu Mono;"><span style="color: rgb(171, 178, 191); font-size: 16px;"><br></span></span></span></span><span style="color: rgb(171, 178, 191); font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal;"><br></span></code>
+</p>
+</div>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-282">
+<p style="text-align: center;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal; font-size: 16px; color: rgb(52, 56, 56);">Spin up a new virtualized blockchain network in just a few lines of code</span>
+</p>
+</div>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-247">
+<div id="lp-pom-box-247-color-overlay"></div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-254">
+<p style="text-align: center;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal; font-size: 16px; color: rgb(52, 56, 56);">Establish policies to determine what type of traffic is permitted on the network</span>
+</p>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-255">
+<div id="lp-pom-box-255-color-overlay"></div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-290">
+<p>
+<span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(171, 178, 191); font-size: 16px;">Contract&nbsp;</span><span style="font-size: 16px;"><span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(97, 174, 238);">IntranetFirewall</span><span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(171, 178, 191);">&nbsp;{<br>&nbsp; Init(Address target_address) {<br>&nbsp; &nbsp; TunnelRef handle = mOpen(target_address);<br>&nbsp; &nbsp; mApply(handle, {AllowOnlyCorpOrHTTPS});<br>&nbsp; }<br>}<br>
+<br>Status&nbsp;</span><span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(97, 174, 238);">AllowOnlyCorpOrHTTPS</span><span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(171, 178, 191);">(PacketRef packet) {<br>&nbsp;&nbsp;</span><span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(198, 120, 221);">if</span><span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(171, 178, 191);">&nbsp;(packet.src().port() !=&nbsp;</span><span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(209, 154, 102);">443</span><span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(171, 178, 191);">&nbsp;&amp;&amp;<br>&nbsp; &nbsp; &nbsp; !packet.src().url().as_string().match(</span><span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(152, 195, 121);">'intranet.example.com'</span><span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(171, 178, 191);">)) {<br>&nbsp; &nbsp;&nbsp;</span><span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(198, 120, 221);">return</span><span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(171, 178, 191);">&nbsp;Status::UNSAFE;<br>&nbsp; }<br>&nbsp;&nbsp;</span><span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(198, 120, 221);">return</span></span><span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(171, 178, 191); font-size: 16px;">&nbsp;Status::OK;<br>}</span>
+</p>
+</div>
+</div>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-257">
+<div id="lp-pom-box-257-color-overlay"></div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-259">
+<p style="text-align: center;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal; font-size: 16px; color: rgb(52, 56, 56);">Analyze network traffic for phishing attacks such as masquerading URLs with unicode characters</span>
+</p>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-260">
+<div id="lp-pom-box-260-color-overlay"></div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-283">
+<p>
+<code class="c"><span style="color: rgb(171, 178, 191); font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; font-size: 16px;">Contract&nbsp;</span><span style="font-size: 16px;"><span style="font-style: normal;"><span style="font-weight: 400;"><span style="font-family: Ubuntu Mono;"><span style="color: rgb(97, 174, 238);">PhishCatcher</span><span style="color: rgb(171, 178, 191);">&nbsp;{<br>&nbsp; Init(Address client_address) {<br>&nbsp; &nbsp; TunnelRef handle = mOpen(client_address);<br>&nbsp; &nbsp; mApply(handle, {PhishFunc});<br>&nbsp; }<br>}</span></span></span></span></span></code>
+</p>
+<p>
+<code class="c"><span style="font-size: 16px;"><span style="font-style: normal;"><span style="font-weight: 400;"><span style="font-family: Ubuntu Mono;"><span style="color: rgb(171, 178, 191);">Status</span></span><span style="font-family: Ubuntu Mono;"><span style="color: rgb(171, 178, 191);">&nbsp;</span><span style="color: rgb(97, 174, 238);">PhishFunc</span><span style="color: rgb(171, 178, 191);">(PacketRef packet) { &nbsp;<br>&nbsp;&nbsp;</span><span style="color: rgb(198, 120, 221);">if</span><span style="color: rgb(171, 178, 191);">&nbsp;(packet.src().url().as_string().match('</span><span style="color: rgb(152, 195, 121);">[^\u0000-\u007F]'</span><span style="color: rgb(171, 178, 191);">)) {<br>&nbsp; &nbsp;&nbsp;</span><span style="color: rgb(198, 120, 221);">return</span><span style="color: rgb(171, 178, 191);">&nbsp;Status::UNSAFE;<br>&nbsp; }<br>&nbsp;&nbsp;</span><span style="color: rgb(198, 120, 221);">return</span></span></span></span></span><span style="color: rgb(171, 178, 191); font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; font-size: 16px;">&nbsp;Status::OK;<br>}</span></code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-266">
+<div id="lp-pom-box-266-color-overlay"></div>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-317">
+<p style="line-height: 26px;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal; font-size: 16px; color: rgb(52, 56, 56);">Write decentralized applications using Marconi Script, a Turing-complete language with access to network packets. <br>
+<br>Decentralized Apps can be submitted to the global chain or branch chains for public and private networks.</span>
+</p>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-477">
+<div id="lp-pom-box-477-color-overlay"></div>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-481">
+<p>
+<span style="color: rgb(0, 180, 204); font-size: 12px;"><span style="text-decoration: none; font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal;"><a data-action="url" data-params="false" href="#lp-pom-text-195" style="text-decoration:none !important;" target="_self"></a></span></span><a data-action="url" data-params="false" href="clkn/https/www.marconi.org/team" target="_self"><span style="color: rgb(0, 180, 204); font-size: 16px;"><span style="text-decoration: none; font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal;">Team</span></span></a>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-490">
+<p style="text-align: center;">
+<span style="font-family: Raleway; font-weight: 300; font-style: normal; font-size: 36px; color: rgb(251, 105, 0);">+</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-504">
+<p style="text-align: center;">
+<span style="font-family: Raleway; font-weight: 300; font-style: normal; font-size: 36px; color: rgb(251, 105, 0);">+</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-505">
+<p style="text-align: center;">
+<span style="font-family: Raleway; font-weight: 300; font-style: normal; font-size: 36px; color: rgb(251, 105, 0);">+</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-506">
+<p style="text-align: center;">
+<span style="font-family: Raleway; font-weight: 300; font-style: normal; font-size: 36px; color: rgb(251, 105, 0);">+</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-507">
+<p style="text-align: center;">
+<span style="font-family: Raleway; font-weight: 300; font-style: normal; font-size: 36px; color: rgb(251, 105, 0);">+</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-540">
+<p style="line-height: 26px;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal; font-size: 16px; color: rgb(52, 56, 56);">APIs enable traffic routing, packet analysis, pattern recognition, branch chain creation and token migration.</span>
+</p>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-599">
+<div id="lp-pom-box-599-color-overlay"></div>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-603">
+<p style="line-height: 18px;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal; font-size: 10px; color: rgb(0, 180, 204);"><span style="font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal; font-size: 10px; color: rgb(0, 180, 204);">&copy; 2018 Marconi Foundation</span></span>
+<br>
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal; font-size: 10px; color: rgb(0, 180, 204);"><br></span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-604">
+<p>
+<span style="color: rgb(0, 180, 204);"><a data-action="url" data-params="false" href="clkn/https/s3.us-east-2.amazonaws.com/marconi-files/docs/Marconi_Whitepaper.pdf" style="text-decoration:none !important;" target="_self"></a><a data-action="url" data-params="false" href="clkn/https/docsend.com/view/5zragmb" target="_self"><span style="font-size: 12px; font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal;">Whitepaper</span></a></span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-605">
+<p>
+<a data-action="url" data-params="false" href="#lp-pom-text-733" target="_self"><span style="color: rgb(0, 180, 204);"><span style="font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal; font-size: 12px;">Core Tech</span><span style="font-size: 12px;">&nbsp;</span></span></a>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-606">
+<p>
+<a data-action="url" data-params="false" href="#lp-pom-text-951" target="_self"><span style="color: rgb(0, 180, 204); font-size: 12px;"><span style="text-decoration: none; font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal;">Developers</span>&nbsp;</span></a>
+</p>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-607">
+<div id="lp-pom-box-607-color-overlay"></div>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-609">
+<div id="lp-pom-box-609-color-overlay"></div>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-610">
+<p>
+<span style="color: rgb(0, 180, 204); font-size: 12px;"><span style="text-decoration: none; font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal;"><a data-action="url" data-params="false" href="#lp-pom-text-195" style="text-decoration:none !important;" target="_self"></a></span></span><a data-action="url" data-params="false" href="clkn/https/www.marconi.org/team" target="_self"><span style="color: rgb(0, 180, 204); font-size: 12px;"><span style="text-decoration: none; font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal;">Team</span></span></a>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-619">
+<h1 style="text-align: center; line-height: 45px;">
+<span style="font-family: Raleway; font-weight: 500; font-style: normal; font-size: 36px; color: rgb(255, 255, 255);">Programmable Ethernet</span>
+</h1>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-620">
+<p style="line-height: 29px; text-align: center;">
+<span style="color: rgb(255, 255, 255); font-size: 20px; font-family: Raleway; font-weight: 300; font-style: normal;"><span style="color: rgb(255, 255, 255); font-family: Raleway; font-weight: 300; font-style: normal;">A new blockchain protocol for jump starting secure networks using <span style="color: rgb(255, 255, 255); font-family: Raleway; font-weight: 300; font-style: normal;">programmable packets</span></span></span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-622">
+<h2 style="text-align: center;">
+<span style="font-size: 20px; font-family: Raleway; font-weight: 600; font-style: normal; color: rgb(0, 180, 204);">Marconi Applications</span>
+</h2>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-623">
+<h2 style="text-align: center;">
+<span style="font-size: 20px; font-family: Raleway; font-weight: 600; font-style: normal; color: rgb(0, 180, 204);">Marconi Library</span>
+</h2>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-627">
+<h2 style="text-align: center;">
+<span style="color: rgb(255, 255, 255); font-size: 20px; font-family: Raleway; font-weight: 600; font-style: normal;">Get early access to the SDK</span>
+</h2>
+</div>
+<a class="lp-element lp-pom-button" id="lp-pom-button-628" href="clkn/rel/h-2-lightbox.html"><span class="label">JOIN BETA PROGRAM</span></a>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-647">
+<p style="line-height: 26px;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal; font-size: 16px; color: rgb(52, 56, 56);">Write decentralized applications using Marconi Script, a Turing-complete language with access to network packets. Decentralized Apps can be submitted to the global chain or branch chains for public and private networks.</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-648">
+<p style="line-height: 26px;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal; font-size: 16px; color: rgb(52, 56, 56);">APIs enable traffic routing, packet analysis, pattern recognition, branch chain creation and token migration.</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-662">
+<h2>
+<span style="font-size: 20px; font-family: Raleway; font-weight: 600; font-style: normal; color: rgb(52, 56, 56);">Network Creation</span>
+</h2>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-668">
+<p style="line-height: 26px;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal; font-size: 16px; color: rgb(52, 56, 56);"><span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal; font-size: 16px;">Spin up a new virtualized blockchain network in just a few lines of code</span></span>
+</p>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-671">
+<div id="lp-pom-box-671-color-overlay"></div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-672">
+<p>
+<code class="c"><span style="color: rgb(171, 178, 191); font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; font-size: 14px;">$ marconi branch foo<br></span><span style="font-size: 14px;"><span style="color: rgb(152, 195, 121); font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal;">&gt;&gt;&gt; Success. Created branch foo.</span><span style="color: rgb(171, 178, 191); font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal;">
+<br>
+<br>$ marconi status --branch_name=foo<br>
+</span><span style="color: rgb(152, 195, 121); font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal;">&gt;&gt;&gt; Branch foo: uninitialized</span><span style="color: rgb(171, 178, 191); font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal;">
+<br>
+<br>$ marconi init --config=/tmp/config.txt --branch_name=foo<br>
+</span><span style="color: rgb(152, 195, 121); font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal;">&gt;&gt;&gt; Success. Configured branch foo.</span><span style="color: rgb(171, 178, 191); font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal;">
+<br>
+<br>$ marconi run --branch_name=foo<br>
+</span><span style="color: rgb(152, 195, 121); font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal;">&gt;&gt;&gt; Success. Running branch foo.</span></span><span style="font-style: normal;"><span style="font-weight: 400;"><span style="font-family: Ubuntu Mono;"><span style="color: rgb(171, 178, 191); font-size: 14px;"><br></span></span></span></span><span style="color: rgb(171, 178, 191); font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal;"><br></span></code>
+</p>
+</div>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-677">
+<h2>
+<span style="font-size: 20px; font-family: Raleway; font-weight: 600; font-style: normal; color: rgb(52, 56, 56);">Network Admin</span>
+</h2>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-678">
+<p style="line-height: 26px;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal; font-size: 16px; color: rgb(52, 56, 56);">Establish policies to determine what type of traffic is permitted on the network</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-679">
+<h2>
+<span style="font-size: 20px; font-family: Raleway; font-weight: 600; font-style: normal; color: rgb(52, 56, 56);">Anti-Phishing</span>
+</h2>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-680">
+<p>
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal; font-size: 16px; color: rgb(52, 56, 56);">Analyze network traffic for phishing attacks such as masquerading URLs with unicode characters</span>
+</p>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-692">
+<div id="lp-pom-box-692-color-overlay"></div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-693">
+<p>
+<code class="c"><span style="color: rgb(171, 178, 191); font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; font-size: 14px;">Contract&nbsp;</span><span style="font-size: 14px;"><span style="font-style: normal;"><span style="font-weight: 400;"><span style="font-family: Ubuntu Mono;"><span style="color: rgb(97, 174, 238);">PhishCatcher</span><span style="color: rgb(171, 178, 191);">&nbsp;{<br>&nbsp; Init(Address client_address) {<br>&nbsp; &nbsp; TunnelRef handle = &nbsp; &nbsp; &nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp; mOpen(client_address);<br>&nbsp; &nbsp; mApply(handle, {PhishFunc});<br>&nbsp; }<br>}</span></span></span></span></span></code>
+</p>
+<p>
+<span style="font-size: 14px;"><code class="c"><span style="font-style: normal;"><span style="font-weight: 400;"><span style="font-family: Ubuntu Mono;"><span style="color: rgb(171, 178, 191);">Status</span><span style="color: rgb(171, 178, 191);">&nbsp;</span> <span style="color: rgb(97, 174, 238);">PhishFunc</span><span style="color: rgb(171, 178, 191);">(PacketRef packet) { &nbsp;<br>&nbsp;&nbsp;</span><span style="color: rgb(198, 120, 221);">if</span><span style="color: rgb(171, 178, 191);">&nbsp;(packet.src().url().as_string</span></span></span></span></code></span><code class="c"><span style="font-size: 14px;"><span style="font-style: normal;"><span style="font-weight: 400;"><span style="font-family: Ubuntu Mono;"><span style="color: rgb(171, 178, 191);">()<br>&nbsp; &nbsp; &nbsp; .match('</span><span style="color: rgb(152, 195, 121);">[^\u0000-\u007F]'</span><span style="color: rgb(171, 178, 191);">)) {<br>&nbsp; &nbsp;&nbsp;</span><span style="color: rgb(198, 120, 221);">return</span><span style="color: rgb(171, 178, 191);">&nbsp;Status::UNSAFE;<br>&nbsp; }<br>&nbsp;&nbsp;</span><span style="color: rgb(198, 120, 221);">return&nbsp;</span></span></span></span></span><span style="color: rgb(171, 178, 191); font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; font-size: 14px;">Status::OK;<br>}</span></code>
+</p>
+</div>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-699">
+<div id="lp-pom-box-699-color-overlay"></div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-696">
+<p>
+<span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(171, 178, 191); font-size: 14px;">Contract&nbsp;</span><span style="font-size: 14px;"><span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(97, 174, 238);">IntranetFirewall</span> <span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(171, 178, 191);">&nbsp;{<br>&nbsp; Init(Address target_address) {<br>&nbsp; &nbsp; TunnelRef handle = mOpen(<br>&nbsp; &nbsp; &nbsp; target_address);<br>&nbsp; &nbsp; mApply(handle, <br>&nbsp; &nbsp; &nbsp; {AllowOnlyCorpOrHTTPS});<br>&nbsp; }<br>}<br>
+<br>Status&nbsp;</span> <span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(97, 174, 238);">AllowOnlyCorpOrHTTPS</span> <span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(171, 178, 191);">(<br>&nbsp; &nbsp; Packet Ref packet) {<br>&nbsp;&nbsp;</span> <span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(198, 120, 221);">if</span> <span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(171, 178, 191);">&nbsp;(packet.src().port() !=&nbsp;</span> <span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(209, 154, 102);">443</span> <span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(171, 178, 191);">&nbsp;&amp;&amp;<br>&nbsp; &nbsp; &nbsp; !packet.src().url().as_string()<br>&nbsp; &nbsp; &nbsp; &nbsp; .match(</span><span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(152, 195, 121);">'intranet.foo.com'</span><span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(171, 178, 191);">)) {<br>&nbsp; &nbsp;&nbsp;</span> <span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(198, 120, 221);">return</span> <span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(171, 178, 191);">&nbsp;Status::UNSAFE;<br>&nbsp; }<br>&nbsp;&nbsp;</span> <span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(198, 120, 221);">return&nbsp;</span></span><span style="font-family: &quot;Ubuntu Mono&quot;; font-weight: 400; font-style: normal; color: rgb(171, 178, 191); font-size: 14px;">Status::OK;<br>}</span>
+</p>
+</div>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-703">
+<p class="sectionHeader" style="line-height: 35px;">
+<span style="font-size: 24px; font-family: Raleway; font-weight: 400; font-style: normal; color: rgb(0, 180, 204);">Ethernet-Level Encryption</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-704">
+<p style="line-height: 26px;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal; font-size: 16px; color: rgb(52, 56, 56);">Secure communication pipes established at Layer 2 of the OSI model provide packet-level encryption and custom packet routing and processing</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-705">
+<p class="sectionHeader" style="line-height: 35px;">
+<span style="font-size: 24px; font-family: Raleway; font-weight: 400; font-style: normal; color: rgb(0, 180, 204);">Programmable Packets</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-706">
+<p style="line-height: 26px;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal; font-size: 16px;"><span style="color: rgb(52, 56, 56);">Smart contracts for network packets allow the creation of packet level decentralized applications for improved network security and operation </span></span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-707">
+<p class="sectionHeader" style="line-height: 35px;">
+<span style="font-size: 24px; font-family: Raleway; font-weight: 400; font-style: normal; color: rgb(0, 180, 204);">Branch Chains</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-708">
+<p style="line-height: 26px;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal; font-size: 16px;"><span style="color: rgb(52, 56, 56);">Branchable blockchains enable the programmatic creation and jump starting of new secure networks</span></span>
+</p>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-709">
+<div id="lp-pom-box-709-color-overlay"></div>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-710">
+<div id="lp-pom-box-710-color-overlay"></div>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-711">
+<div id="lp-pom-box-711-color-overlay"></div>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-733">
+<h2 style="text-align: center; line-height: 45px;">
+<span style="font-family: Raleway; font-weight: 500; font-style: normal; font-size: 36px; color: rgb(0, 180, 204);">Core Technology</span>
+</h2>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-753">
+<p class="sectionHeader" style="line-height: 31px;">
+<span style="font-size: 20px; font-family: Raleway; font-weight: 400; font-style: normal; color: rgb(0, 180, 204);">Network Admin Apps</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-754">
+<p style="line-height: 18px;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal; font-size: 12px; color: rgb(255, 255, 255);">Create decentralized security apps like Anti-Phishing, Anti-Malware, Intrusion Prevention Systems and dVPNs</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-755">
+<p class="sectionHeader" style="line-height: 31px;">
+<span style="font-size: 20px; font-family: Raleway; font-weight: 400; font-style: normal; color: rgb(0, 180, 204);">Security Apps</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-756">
+<p style="line-height: 18px;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal; font-size: 12px; color: rgb(255, 255, 255);">Create administrative applications for network load balancing, changing network topology and IOT device management.</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-757">
+<p class="sectionHeader" style="line-height: 31px;">
+<span style="font-size: 20px; font-family: Raleway; font-weight: 400; font-style: normal; color: rgb(0, 180, 204);">Secure Field Networks</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-758">
+<p style="line-height: 18px;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal; font-size: 12px; color: rgb(255, 255, 255);">Rapidly deploy secure networks in battlefields and disaster recovery areas. Record network activity on a ledger for after action reviews.</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-759">
+<p class="sectionHeader" style="line-height: 31px;">
+<span style="font-size: 20px; font-family: Raleway; font-weight: 400; font-style: normal; color: rgb(0, 180, 204);">Token to Chain Migration</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-760">
+<p style="line-height: 18px;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal; font-size: 12px; color: rgb(255, 255, 255);"><span style="font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal; font-size: 12px;">Migrate token projects (e.g. ERC20) to a blockchain where the tokens now provide utility by powering the blockchain</span></span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-761">
+<p class="sectionHeader" style="line-height: 31px;">
+<span style="font-size: 20px; font-family: Raleway; font-weight: 400; font-style: normal; color: rgb(0, 180, 204);">Virtualized Blockchain</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-762">
+<p style="line-height: 18px;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal; font-size: 12px; color: rgb(255, 255, 255);">Jump start new blockchains that leverage the Marconi Network for secure block creation and persistence.</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-763">
+<p style="text-align: center;">
+<span style="font-family: Raleway; font-weight: 400; font-style: normal; font-size: 28px; color: rgb(251, 105, 0);">+</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-764">
+<p style="text-align: center;">
+<span style="font-family: Raleway; font-weight: 400; font-style: normal; font-size: 28px; color: rgb(251, 105, 0);">+</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-765">
+<p style="text-align: center;">
+<span style="font-family: Raleway; font-weight: 400; font-style: normal; font-size: 28px; color: rgb(251, 105, 0);">+</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-766">
+<p style="text-align: center;">
+<span style="font-family: Raleway; font-weight: 400; font-style: normal; font-size: 28px; color: rgb(251, 105, 0);">+</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-768">
+<p style="text-align: center;">
+<span style="font-family: Raleway; font-weight: 400; font-style: normal; font-size: 28px; color: rgb(251, 105, 0);">+</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-774">
+<p style="text-align: center; line-height: 45px;">
+<span style="font-family: Raleway; font-weight: 500; font-style: normal; font-size: 36px; color: rgb(0, 180, 204);">Use Cases</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-793">
+<h2>
+<span style="font-size: 20px; font-family: Raleway; font-weight: 600; font-style: normal; color: rgb(52, 56, 56);">Marconi Applications</span>
+</h2>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-794">
+<h2>
+<span style="font-size: 20px; font-family: Raleway; font-weight: 600; font-style: normal; color: rgb(52, 56, 56);">Marconi Library</span>
+</h2>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-810">
+<div style="text-align: center;">
+<br>
+</div>
+<h2 style="text-align: center;">
+<span style="font-family: Raleway; font-weight: 600; font-style: normal; font-size: 48px; color: rgb(0, 180, 204);">Developers</span>
+</h2>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-891">
+<p style="text-align: center;">
+<span style="color: rgb(255, 255, 255);"><a data-action="url" data-params="false" href="clkn/https/docsend.com/view/5zragmb" style=" text-decoration:none !important;" target="_self"><span style="font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal; font-size: 14px;">Whitepaper</span></a>&nbsp;</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-892">
+<p style="text-align: center;">
+<span style="color: rgb(255, 255, 255);"><a data-action="url" data-params="false" href="#lp-pom-text-142" target="_self"><span style="font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal; font-size: 14px;">Core Tech</span></a></span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-893">
+<p style="text-align: center;">
+<span style="color: rgb(255, 255, 255);"><a data-action="url" data-params="false" href="#lp-pom-text-810" target="_self"><span style="text-decoration: none; font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal; font-size: 14px;">Developers</span></a></span>
+</p>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-894">
+<div id="lp-pom-box-894-color-overlay"></div>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-895">
+<h1>
+<span style="font-family: Raleway; font-weight: 500; font-style: normal; font-size: 48px; color: rgb(255, 255, 255);">Programmable Ethernet</span>
+</h1>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-896">
+<p style="line-height: 42px;">
+<span style="color: rgb(255, 255, 255); font-size: 28px; font-family: Raleway; font-weight: 300; font-style: normal;">A new blockchain protocol for jump starting secure networks using <span style="color: rgb(255, 255, 255); font-size: 28px; font-family: Raleway; font-weight: 300; font-style: normal;">programmable packets</span></span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-897">
+<p style="text-align: center;">
+<span style="color: rgb(52, 56, 56);"><span style="text-decoration: none !important; font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal; font-size: 14px;"><a data-action="url" data-params="false" href="clkn/http/marconi.org/about" style=" text-decoration:none !important;" target="_self"></a></span></span><span style="color: rgb(255, 255, 255);"><a data-action="url" data-params="false" href="clkn/https/www.marconi.org/team" target="_self"><span style="text-decoration: none !important; font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal; font-size: 14px;">Team</span></a></span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-898">
+<h2>
+<span style="color: rgb(255, 255, 255); font-size: 20px; font-family: Raleway; font-weight: 600; font-style: normal;">Get early access to the SDK</span>
+</h2>
+</div>
+<a class="lp-element lp-pom-button" id="lp-pom-button-899" href="clkn/rel/h-2-lightbox.html"><span class="label">Request Github Access</span></a><a class="lp-element lp-pom-button" id="lp-pom-button-900" href="#lp-pom-text-810" target="_self"><span class="label">View Sample Code</span></a>
+<div class="lp-element lp-pom-image" id="lp-pom-image-917">
+<div class="lp-pom-image-container" style="overflow: hidden;">
+<img src="//d9hhrg4mnvzow.cloudfront.net/www.marconi.org/0a00b612-asset-7_0dt0aq0dt0aq000000.png" alt=""></div>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-933">
+<div id="lp-pom-box-933-color-overlay"></div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-850">
+<div id="lp-pom-box-850-color-overlay"></div>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-851">
+<p class="sectionHeader" style="line-height: 35px;">
+<span style="font-size: 28px; font-family: Raleway; font-weight: 400; font-style: normal; color: rgb(0, 180, 204);">Ethernet-Level Encryption</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-852">
+<p style="line-height: 29px;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal; font-size: 18px; color: rgb(52, 56, 56);">Secure communication pipes established at Layer 2 of the OSI model provide packet-level encryption and custom packet routing and processing</span>
+</p>
+</div>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-935">
+<div id="lp-pom-box-935-color-overlay"></div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-856">
+<div id="lp-pom-box-856-color-overlay"></div>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-857">
+<p class="sectionHeader" style="line-height: 35px;">
+<span style="font-size: 28px; font-family: Raleway; font-weight: 400; font-style: normal; color: rgb(0, 180, 204);">Programmable Packets</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-858">
+<p style="line-height: 29px;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal; font-size: 18px;"><span style="color: rgb(52, 56, 56);">Smart contracts for network packets allow the creation of packet level decentralized applications for improved network security and operation </span></span>
+</p>
+</div>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-938">
+<div id="lp-pom-box-938-color-overlay"></div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-862">
+<div id="lp-pom-box-862-color-overlay"></div>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-863">
+<p style="line-height: 29px;">
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal; font-size: 18px;"><span style="color: rgb(52, 56, 56);">Branchable blockchains enable the programmatic creation and jump starting of new secure networks</span></span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-864">
+<p class="sectionHeader" style="line-height: 35px;">
+<span style="font-size: 28px; font-family: Raleway; font-weight: 400; font-style: normal; color: rgb(0, 180, 204);">Branch Chains</span>
+</p>
+</div>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-940">
+<div id="lp-pom-box-940-color-overlay"></div>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-949">
+<div id="lp-pom-box-949-color-overlay"></div>
+</div>
+<a class="lp-element lp-pom-button" id="lp-pom-button-950" href="#lp-pom-text-951" target="_self"><span class="label">View Sample Code</span></a>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-951">
+<h2 style="text-align: center; line-height: 45px;">
+<span style="font-family: Raleway; font-weight: 500; font-style: normal; font-size: 36px; color: rgb(0, 180, 204);">Developers</span>
+</h2>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-959">
+<div id="lp-pom-box-959-color-overlay"></div>
+</div>
+<div class="lp-element lp-pom-image" id="lp-pom-image-965">
+<div class="lp-pom-image-container" style="overflow: hidden;">
+<img src="//d9hhrg4mnvzow.cloudfront.net/www.marconi.org/transparent.gif" alt=""></div>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-981">
+<h2 style="text-align: center;">
+<span style="color: rgb(52, 56, 56); font-size: 20px; font-family: Raleway; font-weight: 600; font-style: normal;">Learn more about the Marconi Platform</span>
+</h2>
+</div>
+<a class="lp-element lp-pom-button" id="lp-pom-button-982" href="clkn/https/docsend.com/view/5zragmb" target="_self"><span class="label">Read Whitepaper</span></a>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-987">
+<p style="line-height: 42px;">
+<span style="color: rgb(52, 56, 56); font-size: 28px; font-family: Raleway; font-weight: 400; font-style: normal;">The Marconi protocol is designed down to the ethernet level and powers a decentralized networking stack that provides privacy, security, net neutrality and upgradability</span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-992">
+<p>
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 300; font-style: normal; font-size: 16px; color: rgb(0, 180, 204);"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a9c1ccc5c5c6e9c4c8dbcac6c7c087c6dbce">[email&#160;protected]</a></span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-993">
+<p>
+<span style="font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal; font-size: 12px; color: rgb(0, 180, 204);"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1179747d7d7e517c7063727e7f783f7e6376">[email&#160;protected]</a></span>
+</p>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-996">
+<div id="lp-pom-box-996-color-overlay"></div>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-1001">
+<div id="lp-pom-box-1001-color-overlay"></div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-1006">
+<p>
+<span style="color: rgb(0, 180, 204); font-size: 12px;"><span style="text-decoration: none; font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal;"><a data-action="url" data-params="false" href="#lp-pom-text-195" style="text-decoration:none !important;" target="_self"></a></span></span><a data-action="url" data-params="false" href="clkn/https/www.marconi.org/team" target="_self"><span style="color: rgb(0, 180, 204); font-size: 18px;"><span style="text-decoration: none; font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal;">Team</span></span></a>
+</p>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-1016">
+<div id="lp-pom-box-1016-color-overlay"></div>
+</div>
+<a class="lp-element lp-pom-button" id="lp-pom-button-1021"><span class="label">X</span></a>
+<div class="lp-element lp-pom-box" id="lp-pom-box-1025">
+<div id="lp-pom-box-1025-color-overlay"></div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-1005">
+<p>
+<span style="color: rgb(0, 180, 204);"><a data-action="url" data-params="false" href="clkn/https/s3.us-east-2.amazonaws.com/marconi-files/docs/Marconi_Whitepaper.pdf" style="text-decoration:none !important;" target="_self"></a><a data-action="url" data-params="false" href="clkn/https/docsend.com/view/5zragmb" target="_self"><span style="font-size: 18px; font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal;">Whitepaper</span></a></span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-1033">
+<p>
+<span style="color: rgb(0, 180, 204);"><a data-action="url" data-params="false" href="clkn/https/s3.us-east-2.amazonaws.com/marconi-files/docs/Marconi_Whitepaper.pdf" style="text-decoration:none !important;" target="_self"></a><a data-action="url" data-params="false" href="clkn/https/docsend.com/view/5zragmb" target="_self"><span style="font-size: 18px; font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal;">Whitepaper</span></a></span>
+</p>
+</div>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-1026">
+<div id="lp-pom-box-1026-color-overlay"></div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-1007">
+<p>
+<a data-action="url" data-params="false" href="#lp-pom-text-733" target="_self"><span style="color: rgb(0, 180, 204);"><span style="font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal; font-size: 18px;">Core Tech</span><span style="font-size: 18px;">&nbsp;</span></span></a>
+</p>
+</div>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-1027">
+<div id="lp-pom-box-1027-color-overlay"></div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-1008">
+<p>
+<a data-action="url" data-params="false" href="#lp-pom-text-951" target="_self"><span style="color: rgb(0, 180, 204); font-size: 18px;"><span style="text-decoration: none; font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal;">Developers</span>&nbsp;</span></a>
+</p>
+</div>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-1030">
+<div id="lp-pom-box-1030-color-overlay"></div>
+</div>
+<a class="lp-element lp-pom-button" id="lp-pom-button-1032" href="clkn/https/www.marconi.org/" target="_self"><span class="label"></span></a><a class="lp-element lp-pom-button" id="lp-pom-button-1034" href="clkn/https/docsend.com/view/5zragmb" target="_self"><span class="label"></span></a><a class="lp-element lp-pom-button" id="lp-pom-button-1036" href="clkn/https/www.marconi.org/team" target="_self"><span class="label"></span></a><a class="lp-element lp-pom-button" id="lp-pom-button-1039" href="#lp-pom-text-733" target="_self"><span class="label"></span></a><a class="lp-element lp-pom-button" id="lp-pom-button-1040" href="#lp-pom-text-951" target="_self"><span class="label"></span></a>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-1041">
+<p>
+<span style="color: rgb(0, 180, 204);"><a data-action="url" data-params="false" href="clkn/https/s3.us-east-2.amazonaws.com/marconi-files/docs/Marconi_Whitepaper.pdf" style="text-decoration:none !important;" target="_self"></a><span style="font-size: 18px; font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal;">Whitepaper</span></span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-1042">
+<p>
+<span style="color: rgb(0, 180, 204); font-size: 12px;"><span style="text-decoration: none; font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal;"><a data-action="url" data-params="false" href="#lp-pom-text-195" style="text-decoration:none !important;" target="_self"></a></span></span><span style="color: rgb(0, 180, 204); font-size: 18px;"><span style="text-decoration: none; font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal;">Team</span></span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-1043">
+<p>
+<span style="color: rgb(0, 180, 204);"><span style="font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal; font-size: 18px;">Core Tech</span><span style="font-size: 18px;">&nbsp;</span></span>
+</p>
+</div>
+<div class="lp-element lp-pom-text nlh" id="lp-pom-text-1044">
+<p>
+<span style="color: rgb(0, 180, 204); font-size: 18px;"><span style="text-decoration: none; font-family: &quot;Open Sans&quot;; font-weight: 400; font-style: normal;">Developers</span> </span>
+</p>
+</div>
+<div class="lp-element lp-code" id="lp-code-1046">
+<!-- lp:insertions start div#lp-code-1046 -->
+<i class="fas fa-angle-right" style="font-size: 18px; color: #00B4CC;"></i>
+<!-- lp:insertions end div#lp-code-1046 -->
+</div>
+<div class="lp-element lp-code" id="lp-code-1047">
+<!-- lp:insertions start div#lp-code-1047 -->
+<i class="fas fa-angle-right" style="font-size: 18px; color: #00B4CC;"></i>
+<!-- lp:insertions end div#lp-code-1047 -->
+</div>
+<div class="lp-element lp-code" id="lp-code-1048">
+<!-- lp:insertions start div#lp-code-1048 -->
+<i class="fas fa-angle-right" style="font-size: 18px; color: #00B4CC;"></i>
+<!-- lp:insertions end div#lp-code-1048 -->
+</div>
+<div class="lp-element lp-code" id="lp-code-1049">
+<!-- lp:insertions start div#lp-code-1049 -->
+<i class="fas fa-angle-right" style="font-size: 18px; color: #00B4CC;"></i>
+<!-- lp:insertions end div#lp-code-1049 -->
+</div>
+</div>
+<a class="lp-element lp-pom-button" id="lp-pom-button-1019"><span class="label">O</span></a>
+<div class="lp-element lp-pom-box" id="lp-pom-box-1051">
+<div id="lp-pom-box-1051-color-overlay"></div>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-1053">
+<div id="lp-pom-box-1053-color-overlay"></div>
+</div>
+<div class="lp-element lp-code" id="lp-code-1054">
+<!-- lp:insertions start div#lp-code-1054 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400.5 227.41"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#c2cece;}.cls-3{fill:none;stroke:#343838;stroke-miterlimit:10;}.cls-4{fill:#373737;}.cls-5{fill:#343838;}.cls-6{fill:#95a0a0;}.cls-7{opacity:0.3;}.cls-8{fill:#585e5e;}.cls-9{fill:#00dffc;}</style></defs><title>branch_Asset 5</title><g id="Layer_2" data-name="Layer 2"><g id="Crypto_currency" data-name="Crypto currency"><g id="_Group_" data-name="&lt;Group&gt;"><g id="_Group_2" data-name="&lt;Group&gt;"><g id="_Group_3" data-name="&lt;Group&gt;"><circle class="cls-1" cx="372.04" cy="198.95" r="26.14" transform="translate(92.59 515.03) rotate(-76.65)"/></g><g id="_Group_4" data-name="&lt;Group&gt;"><path class="cls-2" d="M372,172.81a26.11,26.11,0,0,0-22.5,12.88A26.11,26.11,0,0,1,389.93,218,26.11,26.11,0,0,0,372,172.81Z"/></g><g id="_Group_5" data-name="&lt;Group&gt;"><path id="_Compound_Path_" data-name="&lt;Compound Path&gt;" class="cls-3" d="M372,226.91a28,28,0,1,1,28-28A28,28,0,0,1,372,226.91Zm0-52.29A24.33,24.33,0,1,0,396.37,199,24.36,24.36,0,0,0,372,174.62Z"/></g><g id="_Group_6" data-name="&lt;Group&gt;"><g id="_Group_7" data-name="&lt;Group&gt;"><path id="_Path_" data-name="&lt;Path&gt;" class="cls-3" d="M381.11,208.64H363.53a2,2,0,0,1-1.89-1.27,2.07,2.07,0,0,1,.46-2.24l13.39-13.22H363a1.81,1.81,0,0,1,0-3.62h16.38a2,2,0,0,1,1.88,1.26,2,2,0,0,1-.45,2.23L367.39,205h13.72a1.82,1.82,0,1,1,0,3.63Z"/></g><g id="_Group_8" data-name="&lt;Group&gt;"><path id="_Path_2" data-name="&lt;Path&gt;" class="cls-3" d="M371.29,191.14a1.82,1.82,0,0,1-1.82-1.81v-4.84a1.82,1.82,0,1,1,3.63,0v4.84A1.81,1.81,0,0,1,371.29,191.14Z"/></g><g id="_Group_9" data-name="&lt;Group&gt;"><path id="_Path_3" data-name="&lt;Path&gt;" class="cls-3" d="M371.29,214.12a1.83,1.83,0,0,1-1.82-1.82v-4.84a1.82,1.82,0,0,1,3.63,0v4.84A1.82,1.82,0,0,1,371.29,214.12Z"/></g></g></g><g id="_Group_10" data-name="&lt;Group&gt;"><g id="_Group_11" data-name="&lt;Group&gt;"><path id="_Path_4" data-name="&lt;Path&gt;" class="cls-4" d="M266.83,80.36H244.12V76.74h22.71A15.14,15.14,0,0,0,282,61.6V60.35a15.14,15.14,0,0,0-15.14-15.14h-2l-.26-.9a22.65,22.65,0,0,0-13.88-15.17,22.31,22.31,0,0,0-19.73,2.2l-2.35,1.51-.33-2.21C226.2,17.4,216.19,6.53,203,4.14a31.28,31.28,0,0,0-32.95,15.48,30.82,30.82,0,0,0-2.57,6L167,27.26l-1.68-.45a21,21,0,0,0-5.43-.74,20.76,20.76,0,0,0-20.61,17.61L139,45.21h-5.25a15.14,15.14,0,0,0-15.14,15.14V61.6a15.14,15.14,0,0,0,15.14,15.14H244.12v3.62H133.75A18.76,18.76,0,0,1,115,61.6V60.35a18.77,18.77,0,0,1,18.77-18.77H136a24.42,24.42,0,0,1,28.61-18.67,34,34,0,0,1,2.32-5.06A34.85,34.85,0,0,1,231.25,27a25.93,25.93,0,0,1,36.24,14.62,18.79,18.79,0,0,1,18.1,18.76V61.6A18.76,18.76,0,0,1,266.83,80.36Z"/></g><g id="_Group_12" data-name="&lt;Group&gt;"><path id="_Path_5" data-name="&lt;Path&gt;" class="cls-4" d="M173.85,35.92h-3.63a10,10,0,0,0-9.95-10V22.34A13.59,13.59,0,0,1,173.85,35.92Z"/></g><g id="_Group_13" data-name="&lt;Group&gt;"><path id="_Path_6" data-name="&lt;Path&gt;" class="cls-4" d="M258,46.55h-3.63a10,10,0,0,0-9.95-10V33A13.59,13.59,0,0,1,258,46.55Z"/></g><g id="_Group_14" data-name="&lt;Group&gt;"><path id="_Path_7" data-name="&lt;Path&gt;" class="cls-4" d="M183.12,15.36l-2.79-2.31a13.55,13.55,0,0,1,10.45-4.91v3.63A9.94,9.94,0,0,0,183.12,15.36Z"/></g></g><g id="_Group_15" data-name="&lt;Group&gt;"><g id="_Group_16" data-name="&lt;Group&gt;"><circle class="cls-1" cx="68.64" cy="198.95" r="26.14" transform="translate(-140.76 220.04) rotate(-76.72)"/></g><g id="_Group_17" data-name="&lt;Group&gt;"><path class="cls-2" d="M68.64,172.81a26.11,26.11,0,0,0-22.5,12.88A26.11,26.11,0,0,1,86.52,218a26.11,26.11,0,0,0-17.88-45.17Z"/></g><g id="_Group_18" data-name="&lt;Group&gt;"><path id="_Compound_Path_2" data-name="&lt;Compound Path&gt;" class="cls-5" d="M68.64,226.91a28,28,0,1,1,28-28A28,28,0,0,1,68.64,226.91Zm0-52.29A24.33,24.33,0,1,0,93,199,24.36,24.36,0,0,0,68.64,174.62Z"/></g><g id="_Group_19" data-name="&lt;Group&gt;"><g id="_Group_20" data-name="&lt;Group&gt;"><path id="_Compound_Path_3" data-name="&lt;Compound Path&gt;" class="cls-5" d="M69,220a2.2,2.2,0,0,1-2-1.22l-8-12.36A2.36,2.36,0,0,1,62,203l6.66,3.15,6.75-3.2a2.36,2.36,0,0,1,3,3.34l-7.5,12.57A2.14,2.14,0,0,1,69,220Zm-4.53-11.82,4.49,7L73.18,208l-4.53,2.15Z"/></g><g id="_Group_21" data-name="&lt;Group&gt;"><rect id="_Path_8" data-name="&lt;Path&gt;" class="cls-5" x="57.78" y="188.79" width="21.71" height="3.63" transform="translate(-122.06 259) rotate(-89.93)"/></g><g id="_Group_22" data-name="&lt;Group&gt;"><path id="_Compound_Path_4" data-name="&lt;Compound Path&gt;" class="cls-5" d="M68.63,203.54l-9.36-3.4a2.21,2.21,0,0,1-1.21-3.08L67,179.7a2.39,2.39,0,0,1,2-1.22,2.22,2.22,0,0,1,2,1.28l8.23,17.36a2.17,2.17,0,0,1,.05,1.78A2.23,2.23,0,0,1,78,200.13ZM62,197.28l6.6,2.4,6.67-2.42-6.37-13.41Z"/></g></g></g><g id="_Group_23" data-name="&lt;Group&gt;"><g id="_Group_24" data-name="&lt;Group&gt;"><circle class="cls-1" cx="108" cy="198.95" r="26.14" transform="translate(-110.44 258.35) rotate(-76.72)"/></g><g id="_Group_25" data-name="&lt;Group&gt;"><path class="cls-2" d="M108,172.81a26.11,26.11,0,0,0-22.5,12.88A26.11,26.11,0,0,1,125.88,218,26.11,26.11,0,0,0,108,172.81Z"/></g><g id="_Group_26" data-name="&lt;Group&gt;"><g id="_Group_27" data-name="&lt;Group&gt;"><path id="_Path_9" data-name="&lt;Path&gt;" class="cls-5" d="M109.68,201.56H97.17v-3.63h12.51a4.13,4.13,0,1,0,0-8.26H97.17V186h12.51a7.76,7.76,0,0,1,0,15.52Z"/></g><g id="_Group_28" data-name="&lt;Group&gt;"><path id="_Path_10" data-name="&lt;Path&gt;" class="cls-5" d="M111.85,213.28H97.17v-3.63h14.68c2.85,0,5.16-1.86,5.16-4.13s-2.31-4.13-5.16-4.13H97.17v-3.63h14.68c4.85,0,8.79,3.48,8.79,7.76S116.7,213.28,111.85,213.28Z"/></g><g id="_Group_29" data-name="&lt;Group&gt;"><rect id="_Path_11" data-name="&lt;Path&gt;" class="cls-5" x="99.97" y="182" width="3.63" height="33.9"/></g><g id="_Group_30" data-name="&lt;Group&gt;"><rect id="_Path_12" data-name="&lt;Path&gt;" class="cls-5" x="105.48" y="182" width="3.63" height="5.86"/></g><g id="_Group_31" data-name="&lt;Group&gt;"><rect id="_Path_13" data-name="&lt;Path&gt;" class="cls-5" x="105.48" y="211.46" width="3.63" height="4.44"/></g></g><g id="_Group_32" data-name="&lt;Group&gt;"><path id="_Compound_Path_5" data-name="&lt;Compound Path&gt;" class="cls-5" d="M108,226.91a28,28,0,1,1,28-28A28,28,0,0,1,108,226.91Zm0-52.29A24.33,24.33,0,1,0,132.33,199,24.36,24.36,0,0,0,108,174.62Z"/></g></g><g id="_Group_33" data-name="&lt;Group&gt;"><g id="_Group_34" data-name="&lt;Group&gt;"><circle class="cls-1" cx="291.04" cy="198.95" r="26.14" transform="translate(27.38 432.97) rotate(-75.95)"/></g><g id="_Group_35" data-name="&lt;Group&gt;"><path class="cls-2" d="M291,172.81a26.08,26.08,0,0,0-22.5,12.88A26.11,26.11,0,0,1,308.92,218,26.11,26.11,0,0,0,291,172.81Z"/></g><g id="_Group_36" data-name="&lt;Group&gt;"><path id="_Compound_Path_6" data-name="&lt;Compound Path&gt;" class="cls-5" d="M291,226.91A28,28,0,1,1,319,199,28,28,0,0,1,291,226.91Zm0-52.29A24.33,24.33,0,1,0,315.37,199,24.36,24.36,0,0,0,291,174.62Z"/></g><g id="_Group_37" data-name="&lt;Group&gt;"><path id="_Compound_Path_7" data-name="&lt;Compound Path&gt;" class="cls-5" d="M302.87,217.85H280.7l2-17.3-3.19.58-1.14-8.68,5.25-.9,1.47-11.38,7.93,0,1.1,1.24-1.06,8.48,2.83-.55L297,198l-4.85.84-1.09,9.82h13.59l0,9.15Zm-18.09-3.63h16.29v-1.9H287l1.83-16.52L293,195l-.18-1.42-3.94.76,1.32-10.59h-1.9l-1.4,10.88-4.45.79.19,1.43,4.26-.78Z"/></g></g><g id="_Group_38" data-name="&lt;Group&gt;"><g id="_Group_39" data-name="&lt;Group&gt;"><circle class="cls-6" cx="327.79" cy="198.95" r="26.14" transform="translate(54.86 468.28) rotate(-75.87)"/></g><g id="_Group_40" data-name="&lt;Group&gt;" class="cls-7"><path id="_Path_14" data-name="&lt;Path&gt;" class="cls-8" d="M327.79,172.81a26.11,26.11,0,0,0-22.5,12.88A26.11,26.11,0,0,1,345.67,218a26.11,26.11,0,0,0-17.88-45.17Z"/></g><g id="_Group_41" data-name="&lt;Group&gt;"><path id="_Compound_Path_8" data-name="&lt;Compound Path&gt;" class="cls-5" d="M327.79,226.91a28,28,0,1,1,28-28A28,28,0,0,1,327.79,226.91Zm0-52.29A24.33,24.33,0,1,0,352.12,199,24.36,24.36,0,0,0,327.79,174.62Z"/></g><g id="_Group_42" data-name="&lt;Group&gt;"><g id="_Group_43" data-name="&lt;Group&gt;"><path id="_Compound_Path_9" data-name="&lt;Compound Path&gt;" class="cls-1" d="M332.79,199.19a7.1,7.1,0,0,1-3.58-1,7.17,7.17,0,0,1,1.73-13.14,7.17,7.17,0,1,1,3.71,13.86A7,7,0,0,1,332.79,199.19Zm0-10.73a3.57,3.57,0,0,0-.92.12,3.52,3.52,0,0,0-2.16,1.65,3.57,3.57,0,1,0,3.08-1.77Z"/></g><g id="_Group_44" data-name="&lt;Group&gt;"><path id="_Compound_Path_10" data-name="&lt;Compound Path&gt;" class="cls-1" d="M318.34,206.77a7.18,7.18,0,1,1,6.23-3.59h0A7.17,7.17,0,0,1,318.34,206.77Zm0-10.72a3.71,3.71,0,0,0-.93.12,3.5,3.5,0,0,0-2.15,1.65,3.55,3.55,0,1,0,4.85-1.3A3.61,3.61,0,0,0,318.36,196.05Z"/></g><g id="_Group_45" data-name="&lt;Group&gt;"><path id="_Path_15" data-name="&lt;Path&gt;" class="cls-1" d="M326.5,207.49a3.23,3.23,0,0,0-4-2.29l-.94-3.5a6.84,6.84,0,0,1,8.4,4.85Z"/></g><g id="_Group_46" data-name="&lt;Group&gt;"><path id="_Path_16" data-name="&lt;Path&gt;" class="cls-1" d="M332.27,204.66a6.85,6.85,0,0,1-2.51-9.37l3.14,1.82a3.23,3.23,0,0,0,1.19,4.41Z"/></g><g id="_Group_47" data-name="&lt;Group&gt;"><path id="_Path_17" data-name="&lt;Path&gt;" class="cls-1" d="M325.45,199.68a6.84,6.84,0,0,1-3.42-.93l1.82-3.14a3.24,3.24,0,0,0,4.41-1.18l3.14,1.81a6.89,6.89,0,0,1-5.95,3.44Z"/></g><g id="_Group_48" data-name="&lt;Group&gt;"><path id="_Compound_Path_11" data-name="&lt;Compound Path&gt;" class="cls-1" d="M333.43,215.49a7.18,7.18,0,1,1,6.23-3.59h0A7.18,7.18,0,0,1,333.43,215.49Zm0-10.73a3.57,3.57,0,0,0-.92.12,3.55,3.55,0,1,0,2.69.36A3.49,3.49,0,0,0,333.45,204.76Z"/></g></g></g><g id="_Group_49" data-name="&lt;Group&gt;"><g id="_Group_50" data-name="&lt;Group&gt;"><circle class="cls-6" cx="27.96" cy="198.95" r="26.14" transform="translate(-172.1 180.45) rotate(-76.72)"/></g><g id="_Group_51" data-name="&lt;Group&gt;" class="cls-7"><path id="_Path_18" data-name="&lt;Path&gt;" class="cls-8" d="M28,172.81A26.11,26.11,0,0,0,5.45,185.69,26.11,26.11,0,0,1,45.84,218,26.11,26.11,0,0,0,28,172.81Z"/></g><g id="_Group_52" data-name="&lt;Group&gt;"><path id="_Compound_Path_12" data-name="&lt;Compound Path&gt;" class="cls-5" d="M28,226.91a28,28,0,1,1,27.95-28A28,28,0,0,1,28,226.91Zm0-52.29A24.33,24.33,0,1,0,52.28,199,24.36,24.36,0,0,0,28,174.62Z"/></g><g id="_Group_53" data-name="&lt;Group&gt;"><g id="_Group_54" data-name="&lt;Group&gt;"><path id="_Path_19" data-name="&lt;Path&gt;" class="cls-1" d="M36.29,209.28H16.72a1.82,1.82,0,1,1,0-3.63H36.29a1.94,1.94,0,0,0,1.87-1.42l2.62-9.53a1.94,1.94,0,0,0-1.87-2.45H21.4a1.82,1.82,0,1,1,0-3.63H38.91a5.56,5.56,0,0,1,5.37,7l-2.62,9.53A5.59,5.59,0,0,1,36.29,209.28Z"/></g><g id="_Group_55" data-name="&lt;Group&gt;"><path id="_Path_20" data-name="&lt;Path&gt;" class="cls-1" d="M24.33,200.76H13.25a1.81,1.81,0,1,1,0-3.62H24.33a1.81,1.81,0,1,1,0,3.62Z"/></g></g></g><g id="_Group_56" data-name="&lt;Group&gt;"><path id="_Path_21" data-name="&lt;Path&gt;" class="cls-5" d="M31.5,150H27.88V90.24A31.9,31.9,0,0,1,59.74,58.37H106.4V62H59.74A28.27,28.27,0,0,0,31.5,90.24Z"/></g><g id="_Group_57" data-name="&lt;Group&gt;"><path id="_Path_22" data-name="&lt;Path&gt;" class="cls-5" d="M66.57,150H62.94V90.24A31.91,31.91,0,0,1,94.81,58.37h6.75V62H94.81A28.27,28.27,0,0,0,66.57,90.24Z"/></g><g id="_Group_58" data-name="&lt;Group&gt;"><path id="_Path_23" data-name="&lt;Path&gt;" class="cls-5" d="M370.63,150H367V90.24A28.27,28.27,0,0,0,338.77,62H292.1V58.37h46.67a31.9,31.9,0,0,1,31.86,31.87Z"/></g><g id="_Group_59" data-name="&lt;Group&gt;"><path id="_Path_24" data-name="&lt;Path&gt;" class="cls-5" d="M335.56,150h-3.63V90.24A28.27,28.27,0,0,0,303.7,62h-6.76V58.37h6.76a31.9,31.9,0,0,1,31.86,31.87Z"/></g><g id="_Group_60" data-name="&lt;Group&gt;"><path id="_Compound_Path_13" data-name="&lt;Compound Path&gt;" class="cls-5" d="M29.78,161.12a6.47,6.47,0,1,1,6.46-6.46A6.47,6.47,0,0,1,29.78,161.12Zm0-9.3a2.84,2.84,0,1,0,2.83,2.84A2.84,2.84,0,0,0,29.78,151.82Z"/></g><g id="_Group_61" data-name="&lt;Group&gt;"><path id="_Compound_Path_14" data-name="&lt;Compound Path&gt;" class="cls-5" d="M64.84,161.12a6.47,6.47,0,1,1,6.47-6.46A6.47,6.47,0,0,1,64.84,161.12Zm0-9.3a2.84,2.84,0,1,0,2.84,2.84A2.84,2.84,0,0,0,64.84,151.82Z"/></g><g id="_Group_62" data-name="&lt;Group&gt;"><path id="_Compound_Path_15" data-name="&lt;Compound Path&gt;" class="cls-5" d="M334.52,161.12a6.47,6.47,0,1,1,6.46-6.46A6.47,6.47,0,0,1,334.52,161.12Zm0-9.3a2.84,2.84,0,1,0,2.83,2.84A2.84,2.84,0,0,0,334.52,151.82Z"/></g><g id="_Group_63" data-name="&lt;Group&gt;"><path id="_Compound_Path_16" data-name="&lt;Compound Path&gt;" class="cls-5" d="M369.58,161.12a6.47,6.47,0,1,1,6.47-6.46A6.47,6.47,0,0,1,369.58,161.12Zm0-9.3a2.84,2.84,0,1,0,2.84,2.84A2.84,2.84,0,0,0,369.58,151.82Z"/></g></g><path class="cls-9" d="M149.62,69.4l3.31-16.91,5.4,12.23,5.59-12.23,3,16.91h-2.43l-1.52-9.49-4.65,10.21L153.77,59.9l-1.7,9.5Z"/><path class="cls-9" d="M179.46,65.58h-6.73L171,69.4h-2.56l7.78-16.71,7.51,16.71h-2.6Zm-1-2.23L176.16,58l-2.44,5.35Z"/><path class="cls-9" d="M191,62.7l4.87,6.7H193L188.47,63h-.42V69.4h-2.38V53.68h2.78A7,7,0,0,1,193,54.85a4.31,4.31,0,0,1,1.52,3.44,4.51,4.51,0,0,1-.95,2.87A4.26,4.26,0,0,1,191,62.7Zm-2.95-1.8h.75c2.25,0,3.37-.86,3.37-2.58s-1.09-2.41-3.28-2.41h-.84Z"/><path class="cls-9" d="M209.5,54.52v2.81a6.64,6.64,0,0,0-4.26-1.72,5.4,5.4,0,0,0-4.08,1.74,5.87,5.87,0,0,0-1.68,4.24,5.73,5.73,0,0,0,1.68,4.18,5.51,5.51,0,0,0,4.09,1.7,5.09,5.09,0,0,0,2.13-.41,6.81,6.81,0,0,0,1-.55,11.6,11.6,0,0,0,1.11-.84v2.87a8.67,8.67,0,0,1-4.28,1.15,7.9,7.9,0,0,1-5.76-2.36,7.8,7.8,0,0,1-2.37-5.72,8.06,8.06,0,0,1,2-5.36,7.91,7.91,0,0,1,6.32-2.88A8,8,0,0,1,209.5,54.52Z"/><path class="cls-9" d="M211.6,61.47A7.72,7.72,0,0,1,214,55.76a8,8,0,0,1,5.82-2.38A8.21,8.21,0,0,1,228,61.56a7.73,7.73,0,0,1-2.42,5.75,8.3,8.3,0,0,1-11.35.27A7.73,7.73,0,0,1,211.6,61.47Zm2.4,0a5.68,5.68,0,0,0,1.75,4.29,5.62,5.62,0,0,0,4,1.68A5.68,5.68,0,0,0,224,65.76a6.11,6.11,0,0,0,0-8.44,5.54,5.54,0,0,0-4.14-1.71,5.61,5.61,0,0,0-4.14,1.71A5.67,5.67,0,0,0,214,61.5Z"/><path class="cls-9" d="M231,69.4V52.61l11.47,12V53.68h2.37V70.36l-11.47-12v11Z"/><path class="cls-9" d="M251,53.68V69.4h-2.37V53.68Z"/></g></g></svg>
+<!-- lp:insertions end div#lp-code-1054 -->
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-1059">
+<div id="lp-pom-box-1059-color-overlay"></div>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-1064">
+<div id="lp-pom-box-1064-color-overlay"></div>
+</div>
+<div class="lp-element lp-pom-box" id="lp-pom-box-1065">
+<div id="lp-pom-box-1065-color-overlay"></div>
+</div>
+</div>
+<div class="lp-element lp-pom-block" id="lp-pom-block-890">
+<div id="lp-pom-block-890-color-overlay"></div>
+<div class="lp-pom-block-content"></div>
+</div>
+<div class="lp-element lp-pom-block" id="lp-pom-block-614">
+<div id="lp-pom-block-614-color-overlay"></div>
+<div class="lp-pom-block-content"></div>
+</div>
+<div class="lp-element lp-pom-block" id="lp-pom-block-551">
+<div id="lp-pom-block-551-color-overlay"></div>
+<div class="lp-pom-block-content"></div>
+</div>
+<div class="lp-element lp-pom-block" id="lp-pom-block-702">
+<div id="lp-pom-block-702-color-overlay"></div>
+<div class="lp-pom-block-content"></div>
+</div>
+<div class="lp-element lp-pom-block" id="lp-pom-block-978">
+<div id="lp-pom-block-978-color-overlay"></div>
+<div class="lp-pom-block-content"></div>
+</div>
+<div class="lp-element lp-pom-block" id="lp-pom-block-11">
+<div id="lp-pom-block-11-color-overlay"></div>
+<div class="lp-pom-block-content"></div>
+</div>
+<div class="lp-element lp-pom-block" id="lp-pom-block-954">
+<div id="lp-pom-block-954-color-overlay"></div>
+<div class="lp-pom-block-content"></div>
+</div>
+<div class="lp-element lp-pom-block" id="lp-pom-block-12">
+<div id="lp-pom-block-12-color-overlay"></div>
+<div class="lp-pom-block-content"></div>
+</div>
+<div class="lp-element lp-pom-block" id="lp-pom-block-626">
+<div id="lp-pom-block-626-color-overlay"></div>
+<div class="lp-pom-block-content"></div>
+</div>
+<div class="lp-element lp-pom-block" id="lp-pom-block-10">
+<div id="lp-pom-block-10-color-overlay"></div>
+<div class="lp-pom-block-content"></div>
+</div>
+<div class="lp-element lp-pom-block" id="lp-pom-block-602">
+<div id="lp-pom-block-602-color-overlay"></div>
+<div class="lp-pom-block-content"></div>
+</div>
+</div>
+<!-- lp:insertions start body:after -->
+<div id="lp-pom-image-965-holder" class="lp-pom-image-holder"></div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/d07b1474/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">
+  function updateViewport() {
+    var viewport = document.querySelector('meta[name="viewport"]');
+    if (viewport && window.innerWidth > 600 && window.innerWidth < 1024) {
+      var defaultDeviceWidth = window.innerWidth;
+      var defaultPageWidth = document.getElementById('lp-pom-root').offsetWidth;
+      var calculatedScale = (defaultDeviceWidth / defaultPageWidth);
+      var viewportContent = 'initial-scale=' + calculatedScale + ', user-scalable=yes';
+      if (defaultDeviceWidth >= defaultPageWidth) {
+        viewportContent = 'initial-scale=1.0, ' + 'width=device-width, ' + 'user-scalable=yes';
+      }
+      viewport.content = viewportContent;
+    }
+  }
+  lp.jQuery(document).ready(updateViewport);
+  window.addEventListener('orientationchange', updateViewport);
+</script>
+<script>
+  lp.jQuery(function($) {
+
+    // The speed of the scroll in milliseconds
+    var speed = 800;
+
+    // Find links that are #anchors and scroll to them
+    $('a[href^=#]')
+      .not('.lp-pom-form .lp-pom-button')
+      .unbind('click.smoothScroll')
+      .bind('click.smoothScroll', function(event) {
+        event.preventDefault();
+        $('html, body').animate({ scrollTop: $( $(this).attr('href') ).offset().top }, speed);
+      });
+  });
+</script>
+<script>
+
+//Replace #lp-pom-box-330 with the ID of your nav box
+var navButtons = $('#lp-pom-box-240 a');
+//Replace #lp-pom-box-331 with the ID of your content box
+var contentBoxes = $('#lp-pom-box-244 .lp-pom-box');
+
+var nav = [];
+//GA integration conflict workaround
+navButtons.each(function(index){
+  var url = this.href;
+  var hash = url.substring(url.indexOf("#")+1);
+  var data = { elem : this.id, href: hash };
+  nav.push(data);
+});
+navButtons.removeAttr("href");
+
+//When button is clicked
+$(navButtons).click(function(e){
+  //find nav object
+  var navTarget;
+  for(var i=0;i<nav.length;i++){
+  	if (nav[i].elem == this.id){
+    	navTarget = nav[i];
+    }
+  }
+
+  //make other buttons inactive
+  $(navButtons).removeClass('active');
+  //make this button active
+  $(this).addClass('active');
+  //hide all sections
+  contentBoxes.hide();
+  contentBoxes.find('*').hide();
+  //show href section
+  var boxToShow = $('#'+navTarget.href);
+  console.log("box:"+boxToShow);
+  //boxToShow.show('300');
+  boxToShow.show();
+  boxToShow.find('*').show();
+});
+
+//onload, make first button active
+navButtons.first().addClass('active');
+
+</script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css" type="text/css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+  // Homepage Hero
+  $('#lp-pom-button-899 span').html('<i class="fab fa-github" style="font-size: 20px;"></i>' + '&nbsp;&nbsp; Request Git Access');
+  // Homepage Developer
+  $('#lp-pom-button-201 span').html('<i class="fab fa-github" style="font-size: 20px;"></i>' + '&nbsp;&nbsp; Request Git Access');
+  // Mobile Hero
+  $('#lp-pom-button-628 span').html('<i class="fab fa-github" style="font-size: 20px;"></i>' + '&nbsp;&nbsp; Request Git Access');
+
+  $('#lp-pom-text-984 h2 span').html('Learn more in the Whitepaper   <i class="far fa-arrow-alt-circle-right"></i>');
+
+  // Mobile Hamburger Menu
+  $('#lp-pom-button-1019 span').html('<i class="fas fa-bars"></i>');
+
+  // Mobile Close Menu
+  $('#lp-pom-button-1021 span').html('<i class="fas fa-times"></i>');
+
+</script>
+<script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0074/8855.js" async="async"></script>
+<script>
+//Replace "#lp-pom-image-120" with the ID of your toggle button
+//Replace both instances of "#lp-pom-box-113" with the ID of your menu box
+
+$("#lp-pom-button-1019, #lp-pom-box-1001 .lp-pom-button, #lp-pom-button-1021").click(function() {
+
+  $("#lp-pom-box-1001").slideToggle("slow");
+
+});
+
+</script>
+<script type="text/javascript">// See README.md for documentation
+lp.jQuery().ready(function($) {
+  $('input[name^=ubafs-]', 'form').remove();
+
+  var info = JSON.stringify({
+    date: new Date(),
+    agent: navigator.userAgent,
+    screen: {
+      availWidth: screen.availWidth,
+      availHeight: screen.availHeight,
+      width: screen.width,
+      height: screen.height
+    },
+    window: {
+      innerWidth: window.innerWidth,
+      innerHeight: window.innerHeight
+    },
+    hasPlugins: ('length' in navigator.plugins && navigator.plugins.length > 0)
+  });
+
+  var jevField = $('<input type="hidden" id="ubafs-jev" name="ubafs-jev">').val(info);
+  $('form').append(jevField);
+});
+</script>
+<!-- lp:insertions end body:after -->
+
+</body>
+
+</html>

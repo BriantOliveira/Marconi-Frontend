@@ -1,0 +1,215 @@
+
+/* NAVBAR */
+#navagation {
+  background-color: #1a2323;
+  color: #1a2323;
+}
+
+.section {
+  background-color: #1a2323;
+}
+
+.logo {
+  width: 250px;
+  height: 41px;
+}
+
+@media (min-width: 768px)
+.navbar-nav {
+    float: right;
+    margin: 0;
+}
+
+.header-1 {
+  background-color: #1a2323;
+  padding-top: 0px;
+}
+
+.navbar.navbar-transparent {
+  padding-top: 1px;
+}
+
+.navbar-nav.ml-auto {
+  padding-left: 330px;
+}
+
+.img-1 {
+  height: 368px;
+  width: 500px;
+  float: left;
+}
+
+.title {
+  position: relative;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 49px;
+  float: right;
+  color: #fff;
+}
+
+.h5.description {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 48px;
+  float: right;
+  color: #fff;
+  position:relative;
+  margin-top: 100px;
+  color: #fff;
+}
+
+span {
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.lp-element.lp-pom-text.nlh {
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: normal;
+  position:static;
+}
+
+.col-lg-10.offset-md-1 {
+  position: relative;
+  margin-left: 330px;
+  bottom: 105px;
+}
+
+.gitlogo {
+  height: 20px;
+};
+
+gitlogo {
+  background-color: #1a2323;
+  color: #1a2323;
+}
+
+a.btn.btn-magnify.btn-lg.btn-round.btn-danger {
+  margin-left: 20px;
+  color: #fff;
+}
+
+#navbarDropdownMenuLink {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding-top: 4px;
+  padding-left: 4px;
+
+}
+
+.usa-flag {
+  height: 20px;
+  margin-left: 30px;
+}
+
+.china-flag {
+  height: 20px;
+  margin-left: 5px;
+}
+
+.dropdown-menu .dropdown-header {
+  color: #000;
+  padding-left: 20px;
+}
+
+#navbarDropdownMenuLink {
+  padding-left: 20px;
+}
+
+.wrapper {
+  position: absolute;
+  background: none;
+  height: 1323px;
+  width: 100%;
+  text-align: center;
+}
+
+.core1 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 48px;
+  color: rgb(0, 180, 204);
+}
+
+.browser {
+  width: 459px;
+  height: 129px;
+  margin-left: 120px;
+}
+
+.card-description {
+  text-align: center;
+}
+
+.security {
+  width: 391px;
+  height: 258px;
+  margin-right: 220px;
+  margin-bottom: 27px;
+}
+
+.card-title {
+  color: rgb(0, 180, 204);
+  font-size: 28px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.p1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 18px;
+  color: rgb(52, 56, 56);
+}
+
+.wrapper {
+  background-color: #f0f0f0;
+}
+
+.Section2 {
+  background-color: #f0f0f0;
+}
+
+#bt {
+  background: #303535;
+}
+
+#bt:hover {
+  background: #ef6737;
+}
+
+.btn-danger {
+  background: #ef6737;
+}
+
+.btn-danger:hover {
+  background: #ef6737;
+}
+
+.lp-pom-text  {
+  text-align: center;
+  padding-right: 201px;
+  padding-bottom: 6px;
+}
+
+.mini-section{
+  margin-left: 10px;
+  margin-top: 75px;
+}
+
+.App {
+  background: #f0f0f0;
+}
