@@ -10,7 +10,7 @@ class Section3 extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-8 offset-md-2">
-                            <h2 className="core1">Use Case</h2>
+                            <h2 className="core1" style={{textAlign: 'center'}}>Use Case</h2>
                             <br />
                         </div>
                     </div>
