@@ -23,43 +23,67 @@ class Section3 extends Component {
           						<div className="card-block">
                         <h4 className="card-title" style={{fontSize: '20px', fontWeight: '400', fontFamily: 'Raleway'}}>Network Admin Apps</h4>
                         <div className="icon">
-                          <h6 className="card-category"><i className="nc-icon nc-simple-add"></i> Create administrative applications for network load balancing, changing network topology and IOT device management.</h6>
+                          <h6 className="card-category" style={{color: 'rgb(255, 255, 255)'}}><i className="nc-icon nc-simple-add"></i> Create administrative applications for network load balancing, changing network topology and IOT device management.</h6>
                         </div>
           						</div>
           					</div>
           				</div>
-
-
                 <div className="row">
                   <div className="col-md-3">
                   <div className="card card-profile card-plain">
                     <div className="card-block">
                       <h4 className="card-title" style={{fontSize: '20px', fontWeight: '400', fontFamily: 'Raleway'}}>Virtualized Blockchain</h4>
                       <div className="icon">
-                        <h6 className="card-category"><i className="nc-icon nc-simple-add"></i> Jump start new blockchains that leverage the Marconi Network for secure block creation and persistence.</h6>
+                        <h6 className="card-category" style={{color: 'rgb(255, 255, 255)'}}><i className="nc-icon nc-simple-add"></i> Jump start new blockchains that leverage the Marconi Network for secure block creation and persistence.</h6>
                       </div>
                     </div>
                   </div>
                 </div>
-
-
                 <div className="row">
                   <div className="col-md-3">
                   <div className="card card-profile card-plain">
                     <div className="card-block">
                       <h4 className="card-title" style={{fontSize: '20px', fontWeight: '400', fontFamily: 'Raleway'}}>Security Apps</h4>
                       <div className="icon">
-                        <h6 className="card-category"><i className="nc-icon nc-simple-add"></i> Create decentralized security apps like Anti-Phishing, Anti-Malware, Intrusion Prevention Systems and dVPNs.</h6>
+                        <h6 className="card-category" style={{color: 'rgb(255, 255, 255)'}}><i className="nc-icon nc-simple-add"></i> Create decentralized security apps like Anti-Phishing, Anti-Malware, Intrusion Prevention Systems and dVPNs.</h6>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+            <div className="bottom-card">
+            <div className="cardwrap">
+              <div className="row">
+                <div className="col-md-4">
+                  <div className="card card-profile card-plain">
+                    <div className="card-block">
+                      <h4 className="card-title" style={{fontSize: '20px', fontWeight: '400', fontFamily: 'Raleway', textAlign: "center"}}>Token to Blockchain Migration</h4>
+                      <div className="icon">
+                        <h6 className="card-category" style={{color: 'rgb(255, 255, 255)'}}><i className="nc-icon nc-simple-add"></i> Migrate token projects (i.e. ERC20) to their own chain where the tokens now provide utility by powering the blockchain</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <div className="row">
+                <div className="col-md-4">
+                <div className="card card-profile card-plain">
+                  <div className="card-block">
+                    <h4 className="card-title" style={{fontSize: '20px', fontWeight: '400', fontFamily: 'Raleway', textAlign: "center"}}>Dynamic Networks</h4>
+                    <div className="icon">
+                      <h6 className="card-category" style={{color: 'rgb(255, 255, 255)'}}><i className="nc-icon nc-simple-add"></i> Rapidly deploy dynamic networks in battlefields and disaster recovery areas. Record network activity on a ledger for after action reviews.</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+</div>
     );
   }
 }
