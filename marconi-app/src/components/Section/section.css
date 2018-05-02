@@ -120,4 +120,22 @@ a .btn.btn-magnify.btn-lg.btn-round {
 
 .wrapper1 {
   background-color: #343838;
+  padding-bottom: 0px;
+}
+
+.nc-icon {
+  color: #FB6900;
+  font-weight: 600;
+}
+
+.cardwrap {
+  margin-left: 230px;
+}
+
+.landing-section {
+  padding-bottom: 0px;
+}
+
+.ty {
+  font-size: 20px;
 }
